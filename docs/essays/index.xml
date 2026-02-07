@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Essays on Dong Gao</title>
+    <link>https://donggao111.github.io/essays/</link>
+    <description>Recent content in Essays on Dong Gao</description>
+    <image>
+      <title>Dong Gao</title>
+      <url>https://donggao111.github.io/images/papermod-cover.png</url>
+      <link>https://donggao111.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.151.1</generator>
+    <language>zh-cn</language>
+    <copyright>Dong Gao</copyright>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://donggao111.github.io/essays/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quant想涨薪，绕不开的三个问题 </title>
+      <link>https://donggao111.github.io/essays/quant%E6%B6%A8%E8%96%AA%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/quant%E6%B6%A8%E8%96%AA%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h3 id=&#34;从策略逻辑底层所有优势都是不公平的&#34;&gt;从策略逻辑底层：所有优势，都是“不公平”的&lt;/h3&gt;
+&lt;p&gt;我不是Quant，我也不懂这些艰深的策略细节和数学知识，但随着接触的研究员和基金经理越来越多，我就发现，如果你把整个量化投资世界拆开看，你会发现它的底层逻辑，就是通过不对称信息与不均衡能力的系统博弈。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

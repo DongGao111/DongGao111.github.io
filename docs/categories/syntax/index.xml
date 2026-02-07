@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Syntax on Dong Gao</title>
+    <link>https://donggao111.github.io/categories/syntax/</link>
+    <description>Recent content in Syntax on Dong Gao</description>
+    <image>
+      <title>Dong Gao</title>
+      <url>https://donggao111.github.io/images/papermod-cover.png</url>
+      <link>https://donggao111.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.151.1</generator>
+    <language>zh-cn</language>
+    <copyright>Dong Gao</copyright>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://donggao111.github.io/categories/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://donggao111.github.io/posts/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/posts/markdown-syntax/</guid>
+      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+    </item>
+    <item>
+      <title>Code Syntax Guide</title>
+      <link>https://donggao111.github.io/posts/code_syntax/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/posts/code_syntax/</guid>
+      <description>Sample article showcasing basic code syntax and formatting for HTML elements.</description>
+    </item>
+  </channel>
+</rss>
