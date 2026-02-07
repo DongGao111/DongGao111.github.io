@@ -136,7 +136,7 @@ params:
   ShowShareButtons: true
   ShowReadingTime: false
   # disableSpecial1stPost: true
-  displayFullLangName: true
+  displayFullLangName: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
