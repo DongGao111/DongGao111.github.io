@@ -12,15 +12,170 @@
     <generator>Hugo -- 0.151.1</generator>
     <language>zh-cn</language>
     <copyright>Dong Gao</copyright>
-    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://donggao111.github.io/essays/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quant想涨薪，绕不开的三个问题 </title>
+      <title>量化第三次洗牌：谁被淘汰，谁又年薪千万</title>
+      <link>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/</guid>
+      <description>&lt;p&gt;我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>近三年全球量化薪酬整理与分析</title>
+      <link>https://donggao111.github.io/essays/%E8%BF%91%E4%B8%89%E5%B9%B4%E5%85%A8%E7%90%83%E9%87%8F%E5%8C%96%E8%96%AA%E9%85%AC%E6%95%B4%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E8%BF%91%E4%B8%89%E5%B9%B4%E5%85%A8%E7%90%83%E9%87%8F%E5%8C%96%E8%96%AA%E9%85%AC%E6%95%B4%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;量化行业长期以来被视为全球金融市场的皇冠明珠，其薪酬体系因高度不透明和巨大的个体差异而充满神秘色彩。&lt;/p&gt;
+&lt;p&gt;我试着基于 Reddit 核心量化社区（subreddit: r/quant）在 2023～2025 年间数百条薪酬分享帖，整理一份行业薪酬全景图。通过对独立薪酬案例的数据清洗、标准化和分析，希望揭示数字背后的市场逻辑、人才定价机制以及行业趋势。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在量化私募里，请避开长方形的鱼考</title>
+      <link>https://donggao111.github.io/essays/%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E9%87%8C%E8%AF%B7%E9%81%BF%E5%BC%80%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E9%B1%BC/%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E9%87%8C%E8%AF%B7%E9%81%BF%E5%BC%80%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E9%B1%BC/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E9%87%8C%E8%AF%B7%E9%81%BF%E5%BC%80%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E9%B1%BC/%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E9%87%8C%E8%AF%B7%E9%81%BF%E5%BC%80%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E9%B1%BC/</guid>
+      <description>&lt;h3 id=&#34;一从全球顶级量化-刻板印象图说起&#34;&gt;一、从“全球顶级量化-刻板印象图”说起&lt;/h3&gt;
+&lt;p&gt;昨天，我在 X 上偶然看到一张图，图里用调侃的方式，总结了全球顶级量化与高频交易公司各自的“人设”：&lt;/p&gt;
+&lt;p&gt;Jump 是 FPGA 狂魔，Jane Street 像是不小心发明了市场，HRT 是用 GPU 训练一切的数学 PhD，Five Rings像更安静的 Jane Street……&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>量化私募策略收敛与“趋同进化”</title>
+      <link>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E7%AD%96%E7%95%A5%E6%94%B6%E6%95%9B%E4%B8%8E%E8%B6%8B%E5%90%8C%E8%BF%9B%E5%8C%96/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E7%AD%96%E7%95%A5%E6%94%B6%E6%95%9B%E4%B8%8E%E8%B6%8B%E5%90%8C%E8%BF%9B%E5%8C%96/</guid>
+      <description>&lt;h3 id=&#34;一生物界的物竞天择&#34;&gt;一、生物界的物竞天择&lt;/h3&gt;
+&lt;p&gt;我最近在观察量化行业不同管理人行为和我合作的量化团队结构的时候，联想到一个有趣的现象。&lt;/p&gt;
+&lt;p&gt;在自然界里，海豚是哺乳动物，鲨鱼是鱼类，祖宗八代打不着关系，但它们长得几乎一模一样：流线型的身体、背鳍、尖尾巴。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>量化猎头如何构建行业长期竞争力</title>
+      <link>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%8C%8E%E5%A4%B4%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E8%A1%8C%E4%B8%9A%E9%95%BF%E6%9C%9F%E7%AB%9E%E4%BA%89%E5%8A%9B/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%8C%8E%E5%A4%B4%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E8%A1%8C%E4%B8%9A%E9%95%BF%E6%9C%9F%E7%AB%9E%E4%BA%89%E5%8A%9B/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;这个行业怎么说呢？黑猫白猫，能抓到耗子，就是好猫。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;放在量化猎头这个行业里，其实也成立——别扯那么多，先赚到钱。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;结果导向在这个行业里从来都没错。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha</title>
+      <link>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;量化行业永远在讲天才：&lt;/p&gt;
+&lt;p&gt;奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>站在量化私募CEO视角，推演奖金分配的底层逻辑</title>
+      <link>https://donggao111.github.io/essays/%E7%AB%99%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9Fceo%E8%A7%86%E8%A7%92%E6%8E%A8%E6%BC%94%E5%A5%96%E9%87%91%E5%88%86%E9%85%8D%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E7%AB%99%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9Fceo%E8%A7%86%E8%A7%92%E6%8E%A8%E6%BC%94%E5%A5%96%E9%87%91%E5%88%86%E9%85%8D%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/</guid>
+      <description>&lt;p&gt;距离 2025 年结束只剩 33天了，又到了各家整理年终奖的时候。在写这篇文章之前，我想了很久，要怎么系统的思考和整理量化基金年终奖机制？&lt;/p&gt;
+&lt;p&gt;因为量化行业最典型的特点就是一人一价。各家都有不同的薪资体系和绩效评估标准，如果单纯的罗列不同的个例薪资结构，比如：各家结构里 base 和 bonus 的比重是多少？奖金是怎么与 PM/QR 的 PnL 或贡献挂钩？公司分红和奖金池怎样设置？对关键策略贡献者设置什么样的激励？业绩提成、长期跟投、分红？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>量化开发工程师困境与破局方法的一些思考</title>
+      <link>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</link>
+      <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
+      <description>&lt;p&gt;量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>回归常识，量化研究员拉开差距的四项能力</title>
+      <link>https://donggao111.github.io/essays/%E5%9B%9E%E5%BD%92%E5%B8%B8%E8%AF%86%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E6%8B%89%E5%BC%80%E5%B7%AE%E8%B7%9D%E7%9A%84%E5%9B%9B%E9%A1%B9%E8%83%BD%E5%8A%9B/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%9B%9E%E5%BD%92%E5%B8%B8%E8%AF%86%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E6%8B%89%E5%BC%80%E5%B7%AE%E8%B7%9D%E7%9A%84%E5%9B%9B%E9%A1%B9%E8%83%BD%E5%8A%9B/</guid>
+      <description>&lt;p&gt;在创立超级量化猎头公司之前，我做过三家量化私募的HR，我见过非名校的intern成长为PM，也见过王炸开局归国后泯然众人。我经常会思考，都是顶尖背景，为什么有的研究员事业蒸蒸日上，有的却夕阳西下？如果跳过专业技能，回归常识，我们如何快速判断哪类量化研究员未来能做出成绩？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>我对量化私募生意模式的思考</title>
+      <link>https://donggao111.github.io/essays/%E6%88%91%E5%AF%B9%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E7%94%9F%E6%84%8F%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E6%88%91%E5%AF%B9%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E7%94%9F%E6%84%8F%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>&lt;p&gt;在创立超级量化猎头公司之前，我做过三家量化私募的HR，有见过量化风起云涌的大年，也有见过小微盘24年初崩盘时候，各种量化群里的冷清。我有时候经常会思考，量化这门生意，到底怎么赚钱？我们到底该怎么衡量一个量化团队的能力？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quant想涨薪，绕不开的三个问题</title>
       <link>https://donggao111.github.io/essays/quant%E6%B6%A8%E8%96%AA%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://donggao111.github.io/essays/quant%E6%B6%A8%E8%96%AA%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h3 id=&#34;从策略逻辑底层所有优势都是不公平的&#34;&gt;从策略逻辑底层：所有优势，都是“不公平”的&lt;/h3&gt;
 &lt;p&gt;我不是Quant，我也不懂这些艰深的策略细节和数学知识，但随着接触的研究员和基金经理越来越多，我就发现，如果你把整个量化投资世界拆开看，你会发现它的底层逻辑，就是通过不对称信息与不均衡能力的系统博弈。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>对话Jacob，在SRC一年做到PM tracking心得与感悟</title>
+      <link>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Djacob%E5%9C%A8src%E4%B8%80%E5%B9%B4%E5%81%9A%E5%88%B0pm-tracking%E5%BF%83%E5%BE%97%E4%B8%8E%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Djacob%E5%9C%A8src%E4%B8%80%E5%B9%B4%E5%81%9A%E5%88%B0pm-tracking%E5%BF%83%E5%BE%97%E4%B8%8E%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;【Scientech Research 2023年进入中国交易市场后一直是国内量化人才市场关注的焦点，实习薪资行业超一线水准、80%实习转正率、N对1的导师团队…更是不断引发顶尖Quant牛人们的好奇与向往】&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>警惕“小而美”陷阱：量化研究员应谨慎选择小型私募</title>
+      <link>https://donggao111.github.io/essays/%E8%AD%A6%E6%83%95%E5%B0%8F%E8%80%8C%E7%BE%8E%E9%99%B7%E9%98%B1%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%BA%94%E8%B0%A8%E6%85%8E%E9%80%89%E6%8B%A9%E5%B0%8F%E5%9E%8B%E7%A7%81%E5%8B%9F/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E8%AD%A6%E6%83%95%E5%B0%8F%E8%80%8C%E7%BE%8E%E9%99%B7%E9%98%B1%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%BA%94%E8%B0%A8%E6%85%8E%E9%80%89%E6%8B%A9%E5%B0%8F%E5%9E%8B%E7%A7%81%E5%8B%9F/</guid>
+      <description>&lt;p&gt;市场波动加剧，行业洗牌加速，随着25年小微盘牛市，越来越多量化私募远超百亿，曾经被冠以“小而美”称号的长期小型量化私募，正面临前所未有的生存考验。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>对话Aqua，半鞅量化研究员实习心得感悟</title>
+      <link>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Daqua%E5%8D%8A%E9%9E%85%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Wed, 30 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Daqua%E5%8D%8A%E9%9E%85%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;本文提纲：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;求学与求职经历&lt;/li&gt;
+&lt;li&gt;在半鞅的实习日常&lt;/li&gt;
+&lt;li&gt;对半鞅文化的感受&lt;/li&gt;
+&lt;li&gt;给学弟妹的实习求职建议
+感谢Aqua的分享，以下是高东和Aqua的访谈实录整理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;一求学与求职经历&#34;&gt;一、求学与求职经历&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;高东：哈喽Aqua，可以简单介绍一下你的求学和实习经历吗？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>对话Yida，平方和量化研究员实习心得与感悟</title>
+      <link>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Dyida%E5%B9%B3%E6%96%B9%E5%92%8C%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9Dyida%E5%B9%B3%E6%96%B9%E5%92%8C%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;本文提纲：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;求学经历与求职建议&lt;/li&gt;
+&lt;li&gt;平方和投研实习日常&lt;/li&gt;
+&lt;li&gt;量化研究的思考与感受&lt;/li&gt;
+&lt;li&gt;给学弟妹投递平方和的建议
+感谢Yida的分享，以下是高东和Yida的访谈实录整理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;一求学经历与求职建议&#34;&gt;一、求学经历与求职建议&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;高东：哈喽Yida，可以简单介绍一下你的求学和实习经历吗？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>对话周君政，鸣熙资本量化研究员实习心得感悟</title>
+      <link>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9D%E5%91%A8%E5%90%9B%E6%94%BF%E9%B8%A3%E7%86%99%E8%B5%84%E6%9C%AC%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9D%E5%91%A8%E5%90%9B%E6%94%BF%E9%B8%A3%E7%86%99%E8%B5%84%E6%9C%AC%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;本文提纲：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;金融转金工的求学经历与建议&lt;/li&gt;
+&lt;li&gt;职业探索与不同行业感受对比&lt;/li&gt;
+&lt;li&gt;量化私募笔试准备与刷题&lt;/li&gt;
+&lt;li&gt;鸣熙实习感受与项目收获&lt;/li&gt;
+&lt;li&gt;鸣熙组织架构与投研文化&lt;/li&gt;
+&lt;li&gt;鸣熙笔试面试经验分享
+感谢君政的分享，以下是高东和君政的访谈实录整理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;一金融转金工的求学经历与建议&#34;&gt;一、金融转金工的求学经历与建议&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;高东：哈喽君政～可以简单介绍一下你的求学和实习经历吗？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>对话吴勰昀，磐松量化交易员实习心得感悟</title>
+      <link>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9D%E5%90%B4%E5%8B%B0%E6%98%80%E7%A3%90%E6%9D%BE%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E5%AF%B9%E8%AF%9D%E5%90%B4%E5%8B%B0%E6%98%80%E7%A3%90%E6%9D%BE%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%91%98%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%97%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;「2024年的量化市场，磐松绝对是一个绕不开的名词」&lt;/strong&gt;
+从市场的角度回顾磐松的规模历程，23年5月10亿，23年7月20亿，23年8月30亿，24年2月40亿，24年3月50亿，24年4月60亿，24年5月80亿，24年6月最新的管理规模100+亿，而且更值得关注的是磐松目前的管理规模里还没有代销。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

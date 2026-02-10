@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>量化第三次洗牌：谁被淘汰，谁又年薪千万 | Dong Gao</title>
+<meta name="keywords" content="">
+<meta name="description" content="我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。">
+<meta name="author" content="Dong Gao">
+<link rel="canonical" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.df70daba43f25cbb69f1a196c5403358c411f9f14cf09e52c9c494e190fb0e83.css" integrity="sha256-33DaukPyXLtp8aGWxUAzWMQR&#43;fFM8J5SycSU4ZD7DoM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://donggao111.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://donggao111.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://donggao111.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://donggao111.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://donggao111.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="量化第三次洗牌：谁被淘汰，谁又年薪千万" />
+<meta property="og:description" content="我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/" />
+<meta property="og:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta property="article:section" content="essays" />
+<meta property="article:published_time" content="2026-01-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-01-27T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta name="twitter:title" content="量化第三次洗牌：谁被淘汰，谁又年薪千万"/>
+<meta name="twitter:description" content="我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Essays",
+      "item": "https://donggao111.github.io/essays/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "量化第三次洗牌：谁被淘汰，谁又年薪千万",
+      "item": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "量化第三次洗牌：谁被淘汰，谁又年薪千万",
+  "name": "量化第三次洗牌：谁被淘汰，谁又年薪千万",
+  "description": "我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。\n王兴之前说过一句话，我觉得很有道理。\n他说：从抽象的角度看，天下没有完全新的东西，总结来说，所有核心需求和新技术的结合，就是下一次这个问题被解决的表达形式。\n我把这句话直接套在量化上，发现一下就能把复杂问题简化很多。\n量化的核心需求一直没变：在噪音巨大的、非平稳的市场里，用统计方法找微弱但能复利的信号。\n变的只是：机器更强了、数据更多了、流程更自动化了，于是优势要重算一遍。\n观察量化行业过去三十年的演变，我们会发现：\n每一次工具跃迁，其实就是把上一代的核心优势，变成下一代的基础设施。\n“优势重算，人才重估，组织重组”现在看，这件事情又要发生了——量化行业第三次洗牌。\n这篇文章里，我想把行业观察作为叙述主线，试图把四件事串起来：\n为什么量化必然走到 AI？\n三轮技术洗牌到底洗掉了谁？\nAI 这轮变化，它先替代谁、后替代谁？\n人才定价，谁涨价，谁变成基础设施工人？\n一、先看量化到底在干嘛？ 量化这个行业，我觉得最核心的任务只有一个：\n把信息压缩成信号，把噪音压扁成可控的误差。\n因为市场永远很吵闹，价格里面掺杂情绪、资金结构、交易约束、政策变化、新闻噪音、风格轮动……\n在这种环境里，Alpha 更像雾里的路灯，而不是晴天的太阳。\n所以量化从诞生到现在，只是在做同一件事的不同版本迭代：\n用统计把噪音压下去 用系统把执行稳定下来 用流程把研究复制出来 用基础设施把迭代速度拉起来 问题没变。 变的只是工具、算力、数据结构和自动化程度。\n二、洗牌不是线性进步，是“优势重算” 第一轮洗牌（1995–2008）：统计量化把“盘感”外包给机器\n新工具是什么？\n计算机 + 基础统计 + 可编程交易。 时间序列、简单回归、均值回归、配对交易……今天这些技术看起来很拉胯，但当年却非常无敌。\n旧优势怎么被摧毁？\n靠盘感、靠经验、靠场内信息吃饭的人，突然发现——机器不一定更聪明，但它更稳定、更纪律、更不受情绪影响。\n人类交易员最强的地方（临场经验）在机器面前会被拉平了。\n因为机器不需要灵感，它只需要执行。\n结果怎么样？\n第一代量化机构赢在两点： 1.能把想法变成代码；2.能长期稳定执行。\n人才定价发生了什么变化？\n会交易的人开始贬值，“会写程序”的研究员开始升值。 数学、物理、CS 开始人才上桌，从此金融背景不再是唯一门票。\n所以第一次洗牌本质上是：\n把“会交易的人”替换成了 “会把交易写成程序的人”\n第二轮洗牌（2008–2018）：因子工业化把灵感变成“流水线”\n新工具是什么？\n更强算力 + 更大数据 + 因子体系 + 自动化回测平台。 这一轮洗牌的关键词不是某个模型，而是工业化：研究变成可复制的生产流程。\n旧优势怎么被摧毁？\n曾经有人靠“手工挖因子”吃饭：“我觉得这个因子有逻辑”或者“我觉得这个能跑”。\n当回测平台更强、数据更全、挖掘更规模化时，个人直觉的边际收益迅速归零。\n你不再是“发现者”，你变成了“流水线上的操作员”。\n因子被大规模挖掘、快速复制、快速套利，优势衰减得更快。\n结果怎么样？\n赢家不是最聪明的人，而是最会组织的人： infra、流程、组织化研究能力，决定了产能和速度。\n人才定价发生了什么变化？\n研究员开始分层：\n顶级：持续产出、能跨阶段复利 普通：因子打工人，替代性强 招聘从“天赋导向”变成“流程适配导向”。 第二次洗牌本质上是：\n把“聪明的人” 替换成了“适合系统的人”\n第三轮洗牌：AI 把“搜索 + 组合 + 验证”也推向自动化（2018–至今）\n到这里，AI 才真正进入主线。\n新工具是什么？\n深度学习、表征学习、AutoML、LLM、Agent。 它们的共同点不是“更聪明”，而是把研究中的体力活也想自动化：\n特征搜索自动化 模型组合自动化 参数优化自动化 实验编排自动化 甚至连代码生成、文献阅读、实验总结都想自动化 我们会发现，AI 的威力不一定来自“单个模型更准”，更多来自：\n它让研究的“搜索空间”变大了，让迭代速度变快了，让人类的体力优势消失了。\n旧优势怎么被摧毁？\n上一代研究员最常见的优势是：手工因子工程、经验筛选、熟练调参。 但当“搜索 + 组合 + 验证”越来越自动化，人的价值会被迫迁移：\n你靠“勤奋跑实验”赢？系统更勤奋 你靠“经验挑因子”赢？系统能给你一万个候选 你靠“调参技巧”赢？AutoML 会把你当成可替代模块 结果怎么样？\n这轮未来的赢家，不是“会用模型”的公司，而是“重构流程”的公司： 能把 AI 融入整个 pipeline，能把研究变成工业系统，能让实验速度指数级提升。\n人才定价发生了什么变化？\n我们逐步的感受已经变成了现实：\n研究员数量会被压缩（尤其是体力型研究） 顶级 AI/系统型人才溢价上升（甚至指数级） 普通研究员上限被压死 第三次洗牌本质上是：\n把“因子工人” 替换成了 “系统设计者和指挥官”\n三、AI 不见得是“一刀切”，而是先干体力活 很多人讨论 AI 替代，喜欢走极端： 要么“AI 全都替代”，要么“AI 只是工具”。\n我现在观察下来更倾向另一种答案：AI 先替代体力活，再重塑脑力活。\n我试图把量化研究拆成一个链条：\n选问题（什么值得做） 取数据（数据是否可信、是否可用） 造特征/表征（信息怎么压缩） 选模型/结构（偏置与能力如何匹配） 搜索与组合（大量试错） 验证与防伪（识别伪 alpha） 交易实现（成本、容量、冲击、执行） 风控与监控（失效边界与应对） AI 最先吞掉的是哪几段？ 通常是 3–5 段：特征/表征、搜索、组合、参数优化、实验编排——也就是“体力型研究”。\n为什么呢？\n因为这些环节天然适合并行化、自动化、规模化，且短期 ROI 高。\n一旦系统把这些环节吞掉，我们可能会看到一个残酷变化：\n研究员之间的差异，从“我做得更勤奋”，变成“我设计得更好”。\n于是，真正值钱的环节会往两头挪：\n上游：选问题、定义搜索空间、设计目标函数、设定边界 下游：防伪验证、交易约束、实盘稳定性、风险控制 AI 对量化研究最深刻的改变，不一定是比“模型更准”，而是把研究员从“做题家”倒逼成了“出题人”。\n这也是为什么第三轮洗牌的核心是“角色重构”。\n四、人才定价在洗牌中的变化 1）Alpha 工程师，数量最多，分化最大\nAlpha工程师往往是传统量化研究员升级，会 ML/DL，会做信号、会调参、会回测。 短期看仍然吃香，但最大风险是：优势最容易被自动化吞掉。\n他们未来会分成两类：\n一类向上升级，变成系统设计者（负责 pipeline 与边界） 一类停在体力型研究，逐步被压缩为“可替代劳动力” 定价趋势：中位数下行，上限靠角色升级。\n2）AI 研究科学家，最容易被高估，最容易出天价\n论文、理论、模型理解深，这部分人选极少数会非常贵。\n但量化里常见错配也非常真实：\n低估非平稳性 低估交易约束 高估模型迁移性 因此这类人选的定价两极分化：\n顶级极少数：天价（因为能带来范式变化） 大多数：高预期、高淘汰率 论文不是 alpha，落地能力才是分水岭。\n3）Quant–AI 翻译官\u0026架构者，稀缺且值钱\n这类人选不是亲手挖每个因子，而是设计系统怎么挖因子。\n他们最值钱的地方在于：\n能判断哪些问题值得 AI，哪些不值得 能设计 research pipeline 的结构 能审核 AI 产出的 alpha 是否真实 这类人选的稀缺，会直接体现在权限、分成、长期利益绑定上。\n4）AI 基础设施架构师，薪酬持续上调\n没有数据管道、训练平台、实验调度、资源治理、回测/验证平台，AI 量化就只存在 PPT。\n这类人选决定：\n迭代速度 资源利用率 规模化上限 其市场特点是：难招、难评估、一旦稳定流动性很低。\n五、为什么量化巨头会“组团”去 NeurIPS 我最近翻 NeurIPS 2025 的赞助商和参展商名单，发现一堆量化巨头都在列。\n仔细琢磨琢磨，这件事肯定不是巧合，而是一个行业信号：\n头部量化在主动把自己放到 AI 产业链里重新定位。\nNeurIPS 2025 的时间是 2025/11/30–12/7，并且采用“双会场”模式（圣地亚哥会议中心 + 墨西哥城）。 在 NeurIPS 2025 Sponsors \u0026 Exhibitors 页面中，可以看到多家量化交易公司作为赞助商和参展商：例如 Citadel/Citadel Securities、Hudson River Trading、Jane Street、Jump Trading、Optiver、DRW、IMC、Two Sigma、WorldQuant、G-Research 等。\n参会的表面理由很简单：AI 技术相关，NeurIPS 覆盖强化学习、优化、表征学习、因果推断等方向，这些确实跟新一代量化关联越来越大。\n但更深层的理由是：定价权在迁移。\n第三轮洗牌里，量化机构要争的不只是“某个策略”，而是：\n谁能更快训练/迭代 谁能更快验证/防伪 谁能更快把研究自动化 谁能把研究变成平台能力 而这些能力的上游供应链，就在 NeurIPS 这种地方：\n人才密度最高（尤其是“未来两年会变贵的人”） 技术趋势最早暴露（先在学术里出现，再进入工业） 圈层最集中（导师链、合作网络、实验室谱系） 我们可以把 NeurIPS 看成“人才市场的纳斯达克”：不是每个人都值得买，但价格信号都在那里，量化巨头去那里摆摊，本质上是公开表态：我们要在 AI 产业链里抢上游。\n六、AI 不是把量化干死，是把量化的门槛抬高了 问：“电动工具会不会把木匠干死？”\n答：“电动工具不会把木匠干死，电动工具会把“只会刨木头的人”淘汰，留下来的，是会设计结构、会选材料、会管质量、会做系统的人。”\n同理，AI 不会把量化干死，但会发生两件事：\n体力型研究岗位会被压缩 （大量试错、调参、手工特征、重复验证） 系统型能力会溢价 （定义问题、设计流程、防伪验证、交易约束、基础设施、组织协同） 所以第三轮洗牌，它不只是技术升级，而是把行业拆成两层：\n上层：设计系统的人（拿走定价权） 下层：执行模块的人（被基础设施化） 如果是后者：个人溢价下降。\n如果是前者：个人溢价爆炸。\n所以，在这个时代下，你要怎么选择？\n",
+  "wordCount" : "3878",
+  "inLanguage": "zh-cn",
+  "image": "https://donggao111.github.io/images/papermod-cover.png","datePublished": "2026-01-27T00:00:00Z",
+  "dateModified": "2026-01-27T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dong Gao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B4%97%E7%89%8C%E8%B0%81%E8%A2%AB%E6%B7%98%E6%B1%B0%E8%B0%81%E5%8F%88%E5%B9%B4%E8%96%AA%E5%8D%83%E4%B8%87/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dong Gao",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://donggao111.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://donggao111.github.io/" accesskey="h" title="Dong Gao (Alt + H)">Dong Gao</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://donggao111.github.io/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/essays" title="Essays">
+                    <span>Essays</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/events" title="Events">
+                    <span>Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/hiring" title="Hiring">
+                    <span>Hiring</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://donggao111.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://donggao111.github.io/essays/">Essays</a></div>
+    <h1 class="post-title entry-hint-parent">
+      量化第三次洗牌：谁被淘汰，谁又年薪千万
+    </h1>
+    <div class="post-meta"><span title='2026-01-27 00:00:00 +0000 UTC'>January 27, 2026</span>&nbsp;·&nbsp;Dong Gao
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%80%e5%85%88%e7%9c%8b%e9%87%8f%e5%8c%96%e5%88%b0%e5%ba%95%e5%9c%a8%e5%b9%b2%e5%98%9b" aria-label="一、先看量化到底在干嘛？">一、先看量化到底在干嘛？</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e6%b4%97%e7%89%8c%e4%b8%8d%e6%98%af%e7%ba%bf%e6%80%a7%e8%bf%9b%e6%ad%a5%e6%98%af%e4%bc%98%e5%8a%bf%e9%87%8d%e7%ae%97" aria-label="二、洗牌不是线性进步，是“优势重算”">二、洗牌不是线性进步，是“优势重算”</a></li>
+                <li>
+                    <a href="#%e4%b8%89ai-%e4%b8%8d%e8%a7%81%e5%be%97%e6%98%af%e4%b8%80%e5%88%80%e5%88%87%e8%80%8c%e6%98%af%e5%85%88%e5%b9%b2%e4%bd%93%e5%8a%9b%e6%b4%bb" aria-label="三、AI 不见得是“一刀切”，而是先干体力活">三、AI 不见得是“一刀切”，而是先干体力活</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e4%ba%ba%e6%89%8d%e5%ae%9a%e4%bb%b7%e5%9c%a8%e6%b4%97%e7%89%8c%e4%b8%ad%e7%9a%84%e5%8f%98%e5%8c%96" aria-label="四、人才定价在洗牌中的变化">四、人才定价在洗牌中的变化</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e4%b8%ba%e4%bb%80%e4%b9%88%e9%87%8f%e5%8c%96%e5%b7%a8%e5%a4%b4%e4%bc%9a%e7%bb%84%e5%9b%a2%e5%8e%bb-neurips" aria-label="五、为什么量化巨头会“组团”去 NeurIPS">五、为什么量化巨头会“组团”去 NeurIPS</a></li>
+                <li>
+                    <a href="#%e5%85%adai-%e4%b8%8d%e6%98%af%e6%8a%8a%e9%87%8f%e5%8c%96%e5%b9%b2%e6%ad%bb%e6%98%af%e6%8a%8a%e9%87%8f%e5%8c%96%e7%9a%84%e9%97%a8%e6%a7%9b%e6%8a%ac%e9%ab%98%e4%ba%86" aria-label="六、AI 不是把量化干死，是把量化的门槛抬高了">六、AI 不是把量化干死，是把量化的门槛抬高了</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>我最近整理了一下今年头部量化研究员收到offer的薪资情况，又翻了翻这几家海内外顶尖量化团队的招聘动作，琢磨了很久，目前得出了一个结论：量化必然走到 AI。</p>
+<p>王兴之前说过一句话，我觉得很有道理。</p>
+<p><strong>他说：从抽象的角度看，天下没有完全新的东西，总结来说，所有核心需求和新技术的结合，就是下一次这个问题被解决的表达形式。</strong></p>
+<p>我把这句话直接套在量化上，发现一下就能把复杂问题简化很多。</p>
+<p>量化的核心需求一直没变：在噪音巨大的、非平稳的市场里，用统计方法找微弱但能复利的信号。</p>
+<p>变的只是：机器更强了、数据更多了、流程更自动化了，于是优势要重算一遍。</p>
+<p>观察量化行业过去三十年的演变，我们会发现：</p>
+<p><strong>每一次工具跃迁，其实就是把上一代的核心优势，变成下一代的基础设施。</strong></p>
+<p>“优势重算，人才重估，组织重组”现在看，这件事情又要发生了——量化行业第三次洗牌。</p>
+<p>这篇文章里，我想把行业观察作为叙述主线，试图把四件事串起来：</p>
+<ol>
+<li>
+<p>为什么量化必然走到 AI？</p>
+</li>
+<li>
+<p>三轮技术洗牌到底洗掉了谁？</p>
+</li>
+<li>
+<p>AI 这轮变化，它先替代谁、后替代谁？</p>
+</li>
+<li>
+<p>人才定价，谁涨价，谁变成基础设施工人？</p>
+</li>
+</ol>
+<hr>
+<h3 id="一先看量化到底在干嘛">一、先看量化到底在干嘛？<a hidden class="anchor" aria-hidden="true" href="#一先看量化到底在干嘛">#</a></h3>
+<p>量化这个行业，我觉得最核心的任务只有一个：</p>
+<p><strong>把信息压缩成信号，把噪音压扁成可控的误差。</strong></p>
+<p>因为市场永远很吵闹，价格里面掺杂情绪、资金结构、交易约束、政策变化、新闻噪音、风格轮动……</p>
+<p>在这种环境里，Alpha 更像雾里的路灯，而不是晴天的太阳。</p>
+<p>所以量化从诞生到现在，只是在做同一件事的不同版本迭代：</p>
+<ul>
+<li>用统计把噪音压下去</li>
+<li>用系统把执行稳定下来</li>
+<li>用流程把研究复制出来</li>
+<li>用基础设施把迭代速度拉起来</li>
+</ul>
+<p>问题没变。 变的只是工具、算力、数据结构和自动化程度。</p>
+<hr>
+<h3 id="二洗牌不是线性进步是优势重算">二、洗牌不是线性进步，是“优势重算”<a hidden class="anchor" aria-hidden="true" href="#二洗牌不是线性进步是优势重算">#</a></h3>
+<p><strong>第一轮洗牌（1995–2008）：统计量化把“盘感”外包给机器</strong></p>
+<p>新工具是什么？</p>
+<p>计算机 + 基础统计 + 可编程交易。 时间序列、简单回归、均值回归、配对交易……今天这些技术看起来很拉胯，但当年却非常无敌。</p>
+<p>旧优势怎么被摧毁？</p>
+<p>靠盘感、靠经验、靠场内信息吃饭的人，突然发现——机器不一定更聪明，但它更稳定、更纪律、更不受情绪影响。</p>
+<p>人类交易员最强的地方（临场经验）在机器面前会被拉平了。</p>
+<p>因为机器不需要灵感，它只需要执行。</p>
+<p>结果怎么样？</p>
+<p>第一代量化机构赢在两点： 1.能把想法变成代码；2.能长期稳定执行。</p>
+<p>人才定价发生了什么变化？</p>
+<p>会交易的人开始贬值，“会写程序”的研究员开始升值。 数学、物理、CS 开始人才上桌，从此金融背景不再是唯一门票。</p>
+<p>所以第一次洗牌本质上是：</p>
+<p>把“会交易的人”替换成了 “会把交易写成程序的人”</p>
+<p><strong>第二轮洗牌（2008–2018）：因子工业化把灵感变成“流水线”</strong></p>
+<p>新工具是什么？</p>
+<p>更强算力 + 更大数据 + 因子体系 + 自动化回测平台。 这一轮洗牌的关键词不是某个模型，而是工业化：研究变成可复制的生产流程。</p>
+<p>旧优势怎么被摧毁？</p>
+<p>曾经有人靠“手工挖因子”吃饭：“我觉得这个因子有逻辑”或者“我觉得这个能跑”。</p>
+<p>当回测平台更强、数据更全、挖掘更规模化时，个人直觉的边际收益迅速归零。</p>
+<p>你不再是“发现者”，你变成了“流水线上的操作员”。</p>
+<p>因子被大规模挖掘、快速复制、快速套利，优势衰减得更快。</p>
+<p>结果怎么样？</p>
+<p>赢家不是最聪明的人，而是最会组织的人： infra、流程、组织化研究能力，决定了产能和速度。</p>
+<p>人才定价发生了什么变化？</p>
+<p>研究员开始分层：</p>
+<ul>
+<li>顶级：持续产出、能跨阶段复利</li>
+<li>普通：因子打工人，替代性强 招聘从“天赋导向”变成“流程适配导向”。</li>
+</ul>
+<p>第二次洗牌本质上是：</p>
+<p>把“聪明的人” 替换成了“适合系统的人”</p>
+<p><strong>第三轮洗牌：AI 把“搜索 + 组合 + 验证”也推向自动化（2018–至今）</strong></p>
+<p>到这里，AI 才真正进入主线。</p>
+<p>新工具是什么？</p>
+<p>深度学习、表征学习、AutoML、LLM、Agent。 它们的共同点不是“更聪明”，而是把研究中的体力活也想自动化：</p>
+<ul>
+<li>特征搜索自动化</li>
+<li>模型组合自动化</li>
+<li>参数优化自动化</li>
+<li>实验编排自动化</li>
+<li>甚至连代码生成、文献阅读、实验总结都想自动化</li>
+</ul>
+<p>我们会发现，AI 的威力不一定来自“单个模型更准”，更多来自：</p>
+<p>它让研究的“搜索空间”变大了，让迭代速度变快了，让人类的体力优势消失了。</p>
+<p>旧优势怎么被摧毁？</p>
+<p>上一代研究员最常见的优势是：手工因子工程、经验筛选、熟练调参。 但当“搜索 + 组合 + 验证”越来越自动化，人的价值会被迫迁移：</p>
+<ul>
+<li>你靠“勤奋跑实验”赢？系统更勤奋</li>
+<li>你靠“经验挑因子”赢？系统能给你一万个候选</li>
+<li>你靠“调参技巧”赢？AutoML 会把你当成可替代模块</li>
+</ul>
+<p>结果怎么样？</p>
+<p>这轮未来的赢家，不是“会用模型”的公司，而是“重构流程”的公司： 能把 AI 融入整个 pipeline，能把研究变成工业系统，能让实验速度指数级提升。</p>
+<p>人才定价发生了什么变化？</p>
+<p>我们逐步的感受已经变成了现实：</p>
+<ul>
+<li>研究员数量会被压缩（尤其是体力型研究）</li>
+<li>顶级 AI/系统型人才溢价上升（甚至指数级）</li>
+<li>普通研究员上限被压死</li>
+</ul>
+<p>第三次洗牌本质上是：</p>
+<p>把“因子工人” 替换成了 “系统设计者和指挥官”</p>
+<hr>
+<h3 id="三ai-不见得是一刀切而是先干体力活">三、AI 不见得是“一刀切”，而是先干体力活<a hidden class="anchor" aria-hidden="true" href="#三ai-不见得是一刀切而是先干体力活">#</a></h3>
+<p>很多人讨论 AI 替代，喜欢走极端： 要么“AI 全都替代”，要么“AI 只是工具”。</p>
+<p>我现在观察下来更倾向另一种答案：AI 先替代体力活，再重塑脑力活。</p>
+<p><strong>我试图把量化研究拆成一个链条：</strong></p>
+<ol>
+<li>选问题（什么值得做）</li>
+<li>取数据（数据是否可信、是否可用）</li>
+<li>造特征/表征（信息怎么压缩）</li>
+<li>选模型/结构（偏置与能力如何匹配）</li>
+<li>搜索与组合（大量试错）</li>
+<li>验证与防伪（识别伪 alpha）</li>
+<li>交易实现（成本、容量、冲击、执行）</li>
+<li>风控与监控（失效边界与应对）</li>
+</ol>
+<p>AI 最先吞掉的是哪几段？ 通常是 3–5 段：特征/表征、搜索、组合、参数优化、实验编排——也就是“体力型研究”。</p>
+<p>为什么呢？</p>
+<p>因为这些环节天然适合并行化、自动化、规模化，且短期 ROI 高。</p>
+<p>一旦系统把这些环节吞掉，我们可能会看到一个残酷变化：</p>
+<p>研究员之间的差异，从“我做得更勤奋”，变成“我设计得更好”。</p>
+<p>于是，真正值钱的环节会往两头挪：</p>
+<ul>
+<li>上游：选问题、定义搜索空间、设计目标函数、设定边界</li>
+<li>下游：防伪验证、交易约束、实盘稳定性、风险控制</li>
+</ul>
+<p>AI 对量化研究最深刻的改变，不一定是比“模型更准”，而是把研究员从“做题家”倒逼成了“出题人”。</p>
+<p>这也是为什么第三轮洗牌的核心是“角色重构”。</p>
+<hr>
+<h3 id="四人才定价在洗牌中的变化">四、人才定价在洗牌中的变化<a hidden class="anchor" aria-hidden="true" href="#四人才定价在洗牌中的变化">#</a></h3>
+<p><strong>1）Alpha 工程师，数量最多，分化最大</strong></p>
+<p>Alpha工程师往往是传统量化研究员升级，会 ML/DL，会做信号、会调参、会回测。 短期看仍然吃香，但最大风险是：优势最容易被自动化吞掉。</p>
+<p>他们未来会分成两类：</p>
+<ul>
+<li>一类向上升级，变成系统设计者（负责 pipeline 与边界）</li>
+<li>一类停在体力型研究，逐步被压缩为“可替代劳动力”</li>
+</ul>
+<p>定价趋势：中位数下行，上限靠角色升级。</p>
+<p><strong>2）AI 研究科学家，最容易被高估，最容易出天价</strong></p>
+<p>论文、理论、模型理解深，这部分人选极少数会非常贵。</p>
+<p>但量化里常见错配也非常真实：</p>
+<ul>
+<li>低估非平稳性</li>
+<li>低估交易约束</li>
+<li>高估模型迁移性</li>
+</ul>
+<p>因此这类人选的定价两极分化：</p>
+<ul>
+<li>顶级极少数：天价（因为能带来范式变化）</li>
+<li>大多数：高预期、高淘汰率</li>
+</ul>
+<p>论文不是 alpha，落地能力才是分水岭。</p>
+<p><strong>3）Quant–AI 翻译官&amp;架构者，稀缺且值钱</strong></p>
+<p>这类人选不是亲手挖每个因子，而是设计系统怎么挖因子。</p>
+<p>他们最值钱的地方在于：</p>
+<ul>
+<li>能判断哪些问题值得 AI，哪些不值得</li>
+<li>能设计 research pipeline 的结构</li>
+<li>能审核 AI 产出的 alpha 是否真实</li>
+</ul>
+<p>这类人选的稀缺，会直接体现在权限、分成、长期利益绑定上。</p>
+<p><strong>4）AI 基础设施架构师，薪酬持续上调</strong></p>
+<p>没有数据管道、训练平台、实验调度、资源治理、回测/验证平台，AI 量化就只存在 PPT。</p>
+<p>这类人选决定：</p>
+<ul>
+<li>迭代速度</li>
+<li>资源利用率</li>
+<li>规模化上限</li>
+</ul>
+<p>其市场特点是：难招、难评估、一旦稳定流动性很低。</p>
+<hr>
+<h3 id="五为什么量化巨头会组团去-neurips">五、为什么量化巨头会“组团”去 NeurIPS<a hidden class="anchor" aria-hidden="true" href="#五为什么量化巨头会组团去-neurips">#</a></h3>
+<p>我最近翻 NeurIPS 2025 的赞助商和参展商名单，发现一堆量化巨头都在列。</p>
+<p>仔细琢磨琢磨，这件事肯定不是巧合，而是一个行业信号：</p>
+<p><strong>头部量化在主动把自己放到 AI 产业链里重新定位。</strong></p>
+<p>NeurIPS 2025 的时间是 2025/11/30–12/7，并且采用“双会场”模式（圣地亚哥会议中心 + 墨西哥城）。
+在 NeurIPS 2025 Sponsors &amp; Exhibitors 页面中，可以看到多家量化交易公司作为赞助商和参展商：例如 Citadel/Citadel Securities、Hudson River Trading、Jane Street、Jump Trading、Optiver、DRW、IMC、Two Sigma、WorldQuant、G-Research 等。</p>
+<p>参会的表面理由很简单：AI 技术相关，NeurIPS 覆盖强化学习、优化、表征学习、因果推断等方向，这些确实跟新一代量化关联越来越大。</p>
+<p>但更深层的理由是：定价权在迁移。</p>
+<p>第三轮洗牌里，量化机构要争的不只是“某个策略”，而是：</p>
+<ul>
+<li>谁能更快训练/迭代</li>
+<li>谁能更快验证/防伪</li>
+<li>谁能更快把研究自动化</li>
+<li>谁能把研究变成平台能力</li>
+</ul>
+<p>而这些能力的上游供应链，就在 NeurIPS 这种地方：</p>
+<ul>
+<li>人才密度最高（尤其是“未来两年会变贵的人”）</li>
+<li>技术趋势最早暴露（先在学术里出现，再进入工业）</li>
+<li>圈层最集中（导师链、合作网络、实验室谱系）</li>
+</ul>
+<p><strong>我们可以把 NeurIPS 看成“人才市场的纳斯达克”：不是每个人都值得买，但价格信号都在那里，量化巨头去那里摆摊，本质上是公开表态：我们要在 AI 产业链里抢上游。</strong></p>
+<hr>
+<h3 id="六ai-不是把量化干死是把量化的门槛抬高了">六、AI 不是把量化干死，是把量化的门槛抬高了<a hidden class="anchor" aria-hidden="true" href="#六ai-不是把量化干死是把量化的门槛抬高了">#</a></h3>
+<p>问：“电动工具会不会把木匠干死？”</p>
+<p>答：“电动工具不会把木匠干死，电动工具会把“只会刨木头的人”淘汰，留下来的，是会设计结构、会选材料、会管质量、会做系统的人。”</p>
+<p>同理，AI 不会把量化干死，但会发生两件事：</p>
+<ul>
+<li>体力型研究岗位会被压缩 （大量试错、调参、手工特征、重复验证）</li>
+<li>系统型能力会溢价 （定义问题、设计流程、防伪验证、交易约束、基础设施、组织协同）</li>
+</ul>
+<p>所以第三轮洗牌，它不只是技术升级，而是把行业拆成两层：</p>
+<ul>
+<li>上层：设计系统的人（拿走定价权）</li>
+<li>下层：执行模块的人（被基础设施化）</li>
+</ul>
+<p><strong>如果是后者：个人溢价下降。</strong></p>
+<p><strong>如果是前者：个人溢价爆炸。</strong></p>
+<p><strong>所以，在这个时代下，你要怎么选择？</strong></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on x"
+            href="https://x.com/intent/tweet/?text=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f&amp;title=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87&amp;summary=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87&amp;source=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f&title=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on whatsapp"
+            href="https://api.whatsapp.com/send?text=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87%20-%20https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on telegram"
+            href="https://telegram.me/share/url?text=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化第三次洗牌：谁被淘汰，谁又年薪千万 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%e9%87%8f%e5%8c%96%e7%ac%ac%e4%b8%89%e6%ac%a1%e6%b4%97%e7%89%8c%ef%bc%9a%e8%b0%81%e8%a2%ab%e6%b7%98%e6%b1%b0%ef%bc%8c%e8%b0%81%e5%8f%88%e5%b9%b4%e8%96%aa%e5%8d%83%e4%b8%87&u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25AC%25AC%25E4%25B8%2589%25E6%25AC%25A1%25E6%25B4%2597%25E7%2589%258C%25E8%25B0%2581%25E8%25A2%25AB%25E6%25B7%2598%25E6%25B1%25B0%25E8%25B0%2581%25E5%258F%2588%25E5%25B9%25B4%25E8%2596%25AA%25E5%258D%2583%25E4%25B8%2587%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/DongGaodong111/">Dong Gao</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

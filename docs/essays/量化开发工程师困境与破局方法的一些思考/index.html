@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>量化开发工程师困境与破局方法的一些思考 | Dong Gao</title>
+<meta name="keywords" content="">
+<meta name="description" content="量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。">
+<meta name="author" content="Dong Gao">
+<link rel="canonical" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.df70daba43f25cbb69f1a196c5403358c411f9f14cf09e52c9c494e190fb0e83.css" integrity="sha256-33DaukPyXLtp8aGWxUAzWMQR&#43;fFM8J5SycSU4ZD7DoM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://donggao111.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://donggao111.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://donggao111.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://donggao111.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://donggao111.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="量化开发工程师困境与破局方法的一些思考" />
+<meta property="og:description" content="量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" />
+<meta property="og:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta property="article:section" content="essays" />
+<meta property="article:published_time" content="2025-11-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-11-16T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta name="twitter:title" content="量化开发工程师困境与破局方法的一些思考"/>
+<meta name="twitter:description" content="量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Essays",
+      "item": "https://donggao111.github.io/essays/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "量化开发工程师困境与破局方法的一些思考",
+      "item": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "量化开发工程师困境与破局方法的一些思考",
+  "name": "量化开发工程师困境与破局方法的一些思考",
+  "description": "量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。\n今天，我想试着聊聊对“量化开发工程师职场困境”的一些观察与思考。\n一、中低频 QD 的5个困境 1）量化业务结构决定了总是在食物链下游\n在大多中低频量化公司里，研究是“老板的核心资产”，开发是“支持资产”。\n奖金由策略驱动，授权由研究员决定，一年赚到的钱， QR 拿大头，大部分量化私募的团队构成是一个研究员 + 两个开发。\n2）策略 IP 高度保密，研发和开发强制隔离\n国内大部分机构采取的思路是，alpha 不让 QD 看，QD 不碰组合与风控，所以大量 QD 做了好几年接口、数据、回测框架、监控脚本、对账、自动下单系统，但对策略本身一无所知。\n这导致跳槽时能写在简历上的项目差异化低，而且经验随着年限的增加逐渐趋平。\n3）技术栈锁死，跳槽涨薪难度高\nQD 干着干着很容易变成“公司系统的配套工程师”，系统和业务方向都是公司定制的，离开公司后，可能会遇到技术栈不通用，价值无法复用，在市场上可迁移性低的问题。\n你能维护现在公司的撮合系统，不代表你能进入另一家量化私募照样玩得转，结果就是一个公司干久了，会成为这个系统的专家，但会失去成为行业专家的机会。\n4）缺乏 mentor + 缺乏经验\n中国量化的研发环境“快、乱、急”，公司和 PM 招人是为了立即解决问题，所以开发团队容易没人带，没文档，API 改了没人通知。\n一些 QD 前 3 年一直在改 bug、修脚本、写接口、救火，没有什么机会做真正有技术含量的系统设计，大家会觉得 3 年经验等于做了 3 年重复劳动。\n5）晋升路径模糊，职业天花板不详\nQD 在中国的路径一般是，初级开发 → 开发老兵 → （然后就不知道了）\n所以 QD 的长期困惑是：我能不能做到 lead？能不能影响策略？能不能向上走？还是永远打杂？很多 QD 也不知道，自己未来 5 年到底能成为什么人才画像。\n二、自上而下权力结构思考 业务模式本身决定了“开发工程师位于食物链的哪个环节”，这不是公司偏心，而是利润模型决定的自然结构，我们要思考谁决定资源？谁创造即刻收益？如何才能拥有不可替代性？ 量化公司到底在看重什么？不同时间尺度的策略团队，本质上也是不同的“业务”。\n1）高频，看重的是基础设施优势\n盈利核心是先于别人更快看到、撮合、撤单、反应行情。\n收益 \u003e 技术 = 研究\n研究员虽然提供策略，但真正的利润杠杆在 Infra、系统、底层框架，因此算法效率、延迟优化、撮合逻辑、网络协议、都是关键武器。\n因此在这样的模式下，量化私募更像是技术公司，权力在 Infra 和 Core Dev 与 Quant 之间平分秋色。\n2）中低频，买的是组织能力与研究 pipeline\n盈利核心是因子模型、数据覆盖、组合管理、稳定迭代节奏。\n收益 \u003e 研究 \u003e 技术\n策略研究是权力核心，开发工作常常变成投研赋能工具，因此技术对结果的边际贡献没高频那么陡峭，权力还是在 研究员 / PM 这边。\n三、谁离钱越近，谁越重要 谁掌握了投研系统，谁就是“利润决策者”，谁对 pnl 的边际贡献最大，谁就最稀缺，最后人才供需结构会进一步放大差距，从而决定资本往哪里流动。\n1）HFT 权力结构：技术统治一切\n为什么高频开发工资高、地位强？因为在这个结构下，每一毫秒都等于钱。\n你写的撮合订单簿逻辑影响当天 PnL，你写的网络延迟优化影响交易优先级，开发作用不是“辅助”，而是“直接打仗”。\n并且 HFT 是高度保密系统，迁移成本巨大，一个高频核心开发离职意味着，带走系统逻辑，带走市场微结构理解，带走优化经验，替换周期可能需要半年以上。\n我们会发现，策略研究员无法绕开高频系统，PM 无法直接下单，所有权力流向架构核心，高频 Dev 本质是“核心生产部门”。\n2）中低频权力结构：研究团队占主导\n低频策略的核心不是系统，而是 alpha 发现和验证，研究员决定策略盈利，PM 决定资金用途，Dev 和 Infra 做工具进行增强。\n你做一个更好的回测系统，一个更快的分布式框架，不能直接增加收益，需要研究端挖出新的 alpha，在这个结构下公司更愿意在研究员身上下本。\n高频那种“毫秒带来直接资产”的事情在低频里表现不明显，所以低频 Dev = 赋能角色，而不是利润决策者，尽管角色不可或缺，但权力依然在研究端。\n四、多数 QD 为什么只能做“执行层” 因为大部分 QD 只懂“怎么做”，不懂“为什么这么做”，而只有“为什么”才更接近权力本身。 你想在量化团队里往上走，靠的不是辛苦，不是时间——靠的是你对业务的理解、你的抽象能力、你的全链路把控能力。\n原地踏步可能是因为：抽象能力不强、系统视角单一、业务洞察较浅，视野局限在工具而不是流程。\n于是多数 QD 发现陷入了一个循环：没人推，不敢动；没人教，不会动；没人带，一直等。\n如果，你不知道你在帮谁赚钱，也不知道自己怎么能多赚，那你怎么能涨工资呢？\n五、破局的 5 个小建议 1）不要把自己困在“螺丝钉”定义里\n主动把你的角色往“业务”上靠，绝大多数 QD 原地踏步的原因不是技术差，而是你默认自己就是工具，所以别人也默认你就是工具，你做得越快、越稳、越安静，可能就越危险。\n试图把自己从“螺丝钉”变成“结构承包商”，你告诉我为什么要这样交易，我来告诉你怎么让它更赚钱。\n2）全栈不是一个技能，是你的护城河\n虽然量化研究员有几个挣得特别多，但 alpha 是老天赏饭吃，而全栈是有就有、没有就没有。\n全栈让你具备的是，你能看懂 alpha 的 true quality，能判断策略预期是不是幻觉，能在面试中讲清楚“为什么这么做”。你不需要会“做策略”，但需要懂，这个策略为什么能赚钱？为什么能亏？它在市场里到底碰到什么？”\n3）多练结构化复盘\n每一个你做过的功能，都要能讲出：背景，目标，输入输出，trade-off，final impact，如果重来一次你会做什么不同的决定？做到这些，你的跳槽简历会立刻从工具辅助者变成系统 owner。\n4）别怕 alpha 的数学公式，多了解思路\n很多 QD 总觉得真正赚钱的秘密在 alpha，那些都是不能告诉你的。确实，有些核心是 confidential，但你看久了就发现——很多 alpha 根本不是秘密。\n原来觉得谁懂 alpha 谁牛，现在发现 alpha 倒是其次，能把 alpha 之外的所有东西都弄明白，从 test 到 monetize 到 portfolio construction 和各种细节怎么处理，这些要是都明白，那知道不知道 alpha 也就不太重要了。\n“Alpha is optional, monetizing alpha is the real skill.”\n5）接近钱，接近权限本身\n尽量去做高频 QD，更接近钱，延迟就是钱，系统就是竞争力，写得越好、懂得越多，你越不可替代。\n其次，去大团队里的空白地带，大团队本身提供职业稳定性，你越早进一个空白子地带，你越容易成为：系统 owner、架构 owner、execution owner，当整个体系都是你铺的，你在团队里自然拥有话语权和决策权。\n最后，很多人以为量化是一个看能力的行业？但是我们会发现如按这个逻辑推论，在很多事情上结果相关性并不高。我目前的思考是，量化相比于能力，更是一个看“你能理解哪里在赚钱”的行业。\n",
+  "wordCount" : "2846",
+  "inLanguage": "zh-cn",
+  "image": "https://donggao111.github.io/images/papermod-cover.png","datePublished": "2025-11-16T00:00:00Z",
+  "dateModified": "2025-11-16T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dong Gao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dong Gao",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://donggao111.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://donggao111.github.io/" accesskey="h" title="Dong Gao (Alt + H)">Dong Gao</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://donggao111.github.io/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/essays" title="Essays">
+                    <span>Essays</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/events" title="Events">
+                    <span>Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/hiring" title="Hiring">
+                    <span>Hiring</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://donggao111.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://donggao111.github.io/essays/">Essays</a></div>
+    <h1 class="post-title entry-hint-parent">
+      量化开发工程师困境与破局方法的一些思考
+    </h1>
+    <div class="post-meta"><span title='2025-11-16 00:00:00 +0000 UTC'>November 16, 2025</span>&nbsp;·&nbsp;Dong Gao
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%80%e4%b8%ad%e4%bd%8e%e9%a2%91-qd-%e7%9a%845%e4%b8%aa%e5%9b%b0%e5%a2%83" aria-label="一、中低频 QD 的5个困境">一、中低频 QD 的5个困境</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e8%87%aa%e4%b8%8a%e8%80%8c%e4%b8%8b%e6%9d%83%e5%8a%9b%e7%bb%93%e6%9e%84%e6%80%9d%e8%80%83" aria-label="二、自上而下权力结构思考">二、自上而下权力结构思考</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e8%b0%81%e7%a6%bb%e9%92%b1%e8%b6%8a%e8%bf%91%e8%b0%81%e8%b6%8a%e9%87%8d%e8%a6%81" aria-label="三、谁离钱越近，谁越重要">三、谁离钱越近，谁越重要</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e5%a4%9a%e6%95%b0-qd-%e4%b8%ba%e4%bb%80%e4%b9%88%e5%8f%aa%e8%83%bd%e5%81%9a%e6%89%a7%e8%a1%8c%e5%b1%82" aria-label="四、多数 QD 为什么只能做“执行层”">四、多数 QD 为什么只能做“执行层”</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e7%a0%b4%e5%b1%80%e7%9a%84-5-%e4%b8%aa%e5%b0%8f%e5%bb%ba%e8%ae%ae" aria-label="五、破局的 5 个小建议">五、破局的 5 个小建议</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>量化开发工程师的困境不是“技术岗待遇低”或“岗位流动性大”，甚至在入职 2 年内，我遇到的 QD 朋友职场幸福度是很高的，但在聊天的过程中，我隐约感到有一种和量化业务模式深度绑定的结构性困境，但大家不爱聊这件事。就像是房间里有一只沉默的大象，它一直在房间里，越长越大。大家绕着它走、跨着它走、假装没撞到它，觉得这是未来的问题，现在不用管，其实也有不满意，但也没人动。</p>
+<p>今天，我想试着聊聊对“量化开发工程师职场困境”的一些观察与思考。</p>
+<hr>
+<h3 id="一中低频-qd-的5个困境">一、中低频 QD 的5个困境<a hidden class="anchor" aria-hidden="true" href="#一中低频-qd-的5个困境">#</a></h3>
+<p><strong>1）量化业务结构决定了总是在食物链下游</strong></p>
+<p>在大多中低频量化公司里，研究是“老板的核心资产”，开发是“支持资产”。</p>
+<p>奖金由策略驱动，授权由研究员决定，一年赚到的钱， QR 拿大头，大部分量化私募的团队构成是一个研究员 + 两个开发。</p>
+<p><strong>2）策略 IP 高度保密，研发和开发强制隔离</strong></p>
+<p>国内大部分机构采取的思路是，alpha 不让 QD 看，QD 不碰组合与风控，所以大量 QD 做了好几年接口、数据、回测框架、监控脚本、对账、自动下单系统，但对策略本身一无所知。</p>
+<p>这导致跳槽时能写在简历上的项目差异化低，而且经验随着年限的增加逐渐趋平。</p>
+<p><strong>3）技术栈锁死，跳槽涨薪难度高</strong></p>
+<p>QD 干着干着很容易变成“公司系统的配套工程师”，系统和业务方向都是公司定制的，离开公司后，可能会遇到技术栈不通用，价值无法复用，在市场上可迁移性低的问题。</p>
+<p>你能维护现在公司的撮合系统，不代表你能进入另一家量化私募照样玩得转，结果就是一个公司干久了，会成为这个系统的专家，但会失去成为行业专家的机会。</p>
+<p><strong>4）缺乏 mentor + 缺乏经验</strong></p>
+<p>中国量化的研发环境“快、乱、急”，公司和 PM 招人是为了立即解决问题，所以开发团队容易没人带，没文档，API 改了没人通知。</p>
+<p>一些 QD 前 3 年一直在改 bug、修脚本、写接口、救火，没有什么机会做真正有技术含量的系统设计，大家会觉得 3 年经验等于做了 3 年重复劳动。</p>
+<p><strong>5）晋升路径模糊，职业天花板不详</strong></p>
+<p>QD 在中国的路径一般是，初级开发 → 开发老兵 → （然后就不知道了）</p>
+<p>所以 QD 的长期困惑是：我能不能做到 lead？能不能影响策略？能不能向上走？还是永远打杂？很多 QD 也不知道，自己未来 5 年到底能成为什么人才画像。</p>
+<hr>
+<h3 id="二自上而下权力结构思考">二、自上而下权力结构思考<a hidden class="anchor" aria-hidden="true" href="#二自上而下权力结构思考">#</a></h3>
+<p>业务模式本身决定了“开发工程师位于食物链的哪个环节”，这不是公司偏心，而是利润模型决定的自然结构，我们要思考谁决定资源？谁创造即刻收益？如何才能拥有不可替代性？
+量化公司到底在看重什么？不同时间尺度的策略团队，本质上也是不同的“业务”。</p>
+<p><strong>1）高频，看重的是基础设施优势</strong></p>
+<p>盈利核心是先于别人更快看到、撮合、撤单、反应行情。</p>
+<p>收益 &gt; 技术 = 研究</p>
+<p>研究员虽然提供策略，但真正的利润杠杆在 Infra、系统、底层框架，因此算法效率、延迟优化、撮合逻辑、网络协议、都是关键武器。</p>
+<p>因此在这样的模式下，量化私募更像是技术公司，权力在 Infra 和 Core Dev 与 Quant 之间平分秋色。</p>
+<p><strong>2）中低频，买的是组织能力与研究 pipeline</strong></p>
+<p>盈利核心是因子模型、数据覆盖、组合管理、稳定迭代节奏。</p>
+<p>收益 &gt; 研究 &gt; 技术</p>
+<p>策略研究是权力核心，开发工作常常变成投研赋能工具，因此技术对结果的边际贡献没高频那么陡峭，权力还是在 研究员 / PM 这边。</p>
+<hr>
+<h3 id="三谁离钱越近谁越重要">三、谁离钱越近，谁越重要<a hidden class="anchor" aria-hidden="true" href="#三谁离钱越近谁越重要">#</a></h3>
+<p>谁掌握了投研系统，谁就是“利润决策者”，谁对 pnl 的边际贡献最大，谁就最稀缺，最后人才供需结构会进一步放大差距，从而决定资本往哪里流动。</p>
+<p><strong>1）HFT 权力结构：技术统治一切</strong></p>
+<p>为什么高频开发工资高、地位强？因为在这个结构下，每一毫秒都等于钱。</p>
+<p>你写的撮合订单簿逻辑影响当天 PnL，你写的网络延迟优化影响交易优先级，开发作用不是“辅助”，而是“直接打仗”。</p>
+<p>并且 HFT 是高度保密系统，迁移成本巨大，一个高频核心开发离职意味着，带走系统逻辑，带走市场微结构理解，带走优化经验，替换周期可能需要半年以上。</p>
+<p>我们会发现，策略研究员无法绕开高频系统，PM 无法直接下单，所有权力流向架构核心，高频 Dev 本质是“核心生产部门”。</p>
+<p><strong>2）中低频权力结构：研究团队占主导</strong></p>
+<p>低频策略的核心不是系统，而是 alpha 发现和验证，研究员决定策略盈利，PM 决定资金用途，Dev 和 Infra 做工具进行增强。</p>
+<p>你做一个更好的回测系统，一个更快的分布式框架，不能直接增加收益，需要研究端挖出新的 alpha，在这个结构下公司更愿意在研究员身上下本。</p>
+<p>高频那种“毫秒带来直接资产”的事情在低频里表现不明显，所以低频 Dev = 赋能角色，而不是利润决策者，尽管角色不可或缺，但权力依然在研究端。</p>
+<hr>
+<h3 id="四多数-qd-为什么只能做执行层">四、多数 QD 为什么只能做“执行层”<a hidden class="anchor" aria-hidden="true" href="#四多数-qd-为什么只能做执行层">#</a></h3>
+<p>因为大部分 QD 只懂“怎么做”，不懂“为什么这么做”，而只有“为什么”才更接近权力本身。
+你想在量化团队里往上走，靠的不是辛苦，不是时间——靠的是你对业务的理解、你的抽象能力、你的全链路把控能力。</p>
+<p>原地踏步可能是因为：抽象能力不强、系统视角单一、业务洞察较浅，视野局限在工具而不是流程。</p>
+<p>于是多数 QD 发现陷入了一个循环：没人推，不敢动；没人教，不会动；没人带，一直等。</p>
+<p>如果，你不知道你在帮谁赚钱，也不知道自己怎么能多赚，那你怎么能涨工资呢？</p>
+<hr>
+<h3 id="五破局的-5-个小建议">五、破局的 5 个小建议<a hidden class="anchor" aria-hidden="true" href="#五破局的-5-个小建议">#</a></h3>
+<p><strong>1）不要把自己困在“螺丝钉”定义里</strong></p>
+<p>主动把你的角色往“业务”上靠，绝大多数 QD 原地踏步的原因不是技术差，而是你默认自己就是工具，所以别人也默认你就是工具，你做得越快、越稳、越安静，可能就越危险。</p>
+<p>试图把自己从“螺丝钉”变成“结构承包商”，你告诉我为什么要这样交易，我来告诉你怎么让它更赚钱。</p>
+<p><strong>2）全栈不是一个技能，是你的护城河</strong></p>
+<p>虽然量化研究员有几个挣得特别多，但 alpha 是老天赏饭吃，而全栈是有就有、没有就没有。</p>
+<p>全栈让你具备的是，你能看懂 alpha 的 true quality，能判断策略预期是不是幻觉，能在面试中讲清楚“为什么这么做”。你不需要会“做策略”，但需要懂，这个策略为什么能赚钱？为什么能亏？它在市场里到底碰到什么？”</p>
+<p><strong>3）多练结构化复盘</strong></p>
+<p>每一个你做过的功能，都要能讲出：背景，目标，输入输出，trade-off，final impact，如果重来一次你会做什么不同的决定？做到这些，你的跳槽简历会立刻从工具辅助者变成系统 owner。</p>
+<p><strong>4）别怕 alpha 的数学公式，多了解思路</strong></p>
+<p>很多 QD 总觉得真正赚钱的秘密在 alpha，那些都是不能告诉你的。确实，有些核心是 confidential，但你看久了就发现——很多 alpha 根本不是秘密。</p>
+<p>原来觉得谁懂 alpha 谁牛，现在发现 alpha 倒是其次，能把 alpha 之外的所有东西都弄明白，从 test 到 monetize 到 portfolio construction 和各种细节怎么处理，这些要是都明白，那知道不知道 alpha 也就不太重要了。</p>
+<p>“Alpha is optional, monetizing alpha is the real skill.”</p>
+<p><strong>5）接近钱，接近权限本身</strong></p>
+<p>尽量去做高频 QD，更接近钱，延迟就是钱，系统就是竞争力，写得越好、懂得越多，你越不可替代。</p>
+<p>其次，去大团队里的空白地带，大团队本身提供职业稳定性，你越早进一个空白子地带，你越容易成为：系统 owner、架构 owner、execution owner，当整个体系都是你铺的，你在团队里自然拥有话语权和决策权。</p>
+<p>最后，很多人以为量化是一个看能力的行业？但是我们会发现如按这个逻辑推论，在很多事情上结果相关性并不高。我目前的思考是，量化相比于能力，更是一个看“你能理解哪里在赚钱”的行业。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on x"
+            href="https://x.com/intent/tweet/?text=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f&amp;title=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83&amp;summary=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83&amp;source=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f&title=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on whatsapp"
+            href="https://api.whatsapp.com/send?text=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83%20-%20https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on telegram"
+            href="https://telegram.me/share/url?text=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 量化开发工程师困境与破局方法的一些思考 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%e9%87%8f%e5%8c%96%e5%bc%80%e5%8f%91%e5%b7%a5%e7%a8%8b%e5%b8%88%e5%9b%b0%e5%a2%83%e4%b8%8e%e7%a0%b4%e5%b1%80%e6%96%b9%e6%b3%95%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83&u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E5%259B%25B0%25E5%25A2%2583%25E4%25B8%258E%25E7%25A0%25B4%25E5%25B1%2580%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2580%259D%25E8%2580%2583%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/DongGaodong111/">Dong Gao</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

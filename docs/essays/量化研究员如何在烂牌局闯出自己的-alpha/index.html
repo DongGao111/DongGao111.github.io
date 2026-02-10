@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha | Dong Gao</title>
+<meta name="keywords" content="">
+<meta name="description" content="—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你
+量化行业永远在讲天才：
+奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……">
+<meta name="author" content="Dong Gao">
+<link rel="canonical" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.df70daba43f25cbb69f1a196c5403358c411f9f14cf09e52c9c494e190fb0e83.css" integrity="sha256-33DaukPyXLtp8aGWxUAzWMQR&#43;fFM8J5SycSU4ZD7DoM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://donggao111.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://donggao111.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://donggao111.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://donggao111.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://donggao111.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha" />
+<meta property="og:description" content="—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你
+量化行业永远在讲天才：
+奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/" />
+<meta property="og:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta property="article:section" content="essays" />
+<meta property="article:published_time" content="2025-12-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-12-01T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta name="twitter:title" content="熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha"/>
+<meta name="twitter:description" content="—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你
+量化行业永远在讲天才：
+奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Essays",
+      "item": "https://donggao111.github.io/essays/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha",
+      "item": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha",
+  "name": "熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha",
+  "description": "—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你\n量化行业永远在讲天才：\n奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你\n量化行业永远在讲天才：\n奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……\n但真实世界里，99.9% 的量化研究员都不是这种背景。\n大家的起点往往是：\n二三梯队私募 脏数据、烂系统 项目方向混乱、资源不足 有时甚至半研究半运维 如果你不是天才，那你的路该怎么走？怎么在不完美的环境里找到能让你赢的路径？\n今天我想试着分享一些我的观察，讲讲我对量化研究员职业发展的三个小思考：\n1）普通研究员如何做“现实最优解”？\n2）“熬碰蹭抢”：普通人的 Alpha 从哪里来？\n3）为什么“脏活累活、农村市场”反而更能成为你的护城河？\n一、职业选择：普通研究员如何做“现实最优解” 很多研究员喜欢问：“我是不是一定要去头部公司才算成功？”\n这也是我之前一直在思考的问题，我现在得出的结论是：\n头部平台本身不一定更适合普通研究员，适合你的，往往是那个能让你“成长速度最快”的位置。\n因为不同阶段，研究员需要的东西不一样：\n1）刚入行：需要“让你明白你在干什么”的地方\n这个阶段最容易出现两个极端：\n自信心爆棚：觉得自己随时能进头部、做出策略、拿到 PnL。\n信心不足：觉得自己啥也不行，身边人都比自己强，就自己纯菜鸡。\n但现实往往介于两者之间。\n我觉得入行第一年，最重要的不是证明“你是不是天才”。\n而是：\n你有没有持续在做事情 你有没有真正理解自己在做什么 你的代码是否越来越干净工整 你是否开始有自己的判断和审美 我见过很多第一年就想跳头部的同学，但我总觉得其实他们更需要的是：\n一个可靠的 mentor、一个真实能接触实盘的环境、一个可以犯错但能修正的空间。\n第一年不是“做出成绩”，而是“形成，成长速度”。\n2）职业中期：需要“能产生真正成果”的地方\n这个阶段研究员的分化是最大的，很多 Quant 在这个阶段开始真正成型。\n但也有人陷入一种危险状态：做了一些东西，但没有“真正能够证明自己的成果”。\n这个阶段我分析有几个常见的问题：\n技术不错，但没有体系：写代码可以，但策略碎片化。 做过项目，但无法解释项目：重复别人的框架，但没有自己的理解。 可以复现，但缺乏创新性：在“不断过拟合”，不是解决“真实问题”。 我觉得这时候关键不是跳槽、不是涨薪，而是能不能找一个地方，让你：\n把一个方向打穿打透 形成一套自己的工作方法 对一个项目从头到尾负责 如果没有做到这些，单纯的跳槽薪资上浮30%，我觉得并不是最优解，因为这不会让你本质变更强，但却会让你越来越浮躁和焦虑。\n3）对顶尖公司的理解：这不是“好地方”，而是“需要准备好才能去的地方”\n因为越是头部：审核越严格、失败成本越高、专业分工越细、压力越大、容错率越低、资源和权限分配也越谨慎。\n它不是“成长的地方”，它是“成熟的人去贡献价值，然后变现的地方”。\n职业路径最终不是看你进哪家公司，而是你能不能在某个地方积累出属于自己的“不可替代性”。\n我觉得普通研究员的职业选择逻辑： 不能只盯着“最光鲜的地方”，而是选择 “能让你产生复利的位置”。\n二、“熬碰蹭抢”才是现实世界的 Alpha 生成模型 天才靠天赋跑赢，普通人要靠策略跑赢。“熬碰蹭抢”不是功利取巧，它是一个真实可执行的职业算法。\n1）熬：你能不能在一个方向上形成复利\n咱熬的不是熬时间，而是：\n你的判断能力能不能复利？ 你的经验和知识库能不能复利？ 你的策略直觉能不能复利？ 很多人看着很努力，但其实每天在做的都是完全不可复用的事：\n改需求、跑流程、救火……仔细想想，三年下来其实什么都没留下。\n熬的关键不是坚持，而是积累沉淀，把经验转变为个人资产。\n2）碰：你要主动走到“信息密度更高的人”附近\n量化行业里差距最大的差距，我觉得不是竞赛经历、学历背景、全职起点，而是：你有没有在正确的人身边学过东西？\n和行业里真正做策略的大佬接触十分钟，可能胜过你读十篇论文和做一堆回测。\n你遇见谁，和谁一起合作，这会改变你未来的轨迹。\n所以没事碰一碰，这不是赌运气，而是你让自己尽可能出现“在正确的投研场景里”。\n3）蹭：进入圈子之前，你不可能拥有圈子\n蹭，是一种很奇特的策略，它确实只专属一些特定的E人。这种职业策略可以让自己出现在机会和信息流动的地方。\n技术和 Quant 群 行业 coffee chat 量化研究员聚会 小范围内部讨论 你不在这些地方，就拿不到这么多元的信息，信息越多，你可以用来综合判断产出职场 alpha 的稳定性就越高。\n之前听过一句话，普通人的进阶路径，从来不是天才的复制，而是：“站在哪个圈子，就看到哪个世界”。\n4）抢：资源稀缺，不争取就是放弃\n量化里最稀缺的东西是什么？\n不是工资，不是名头，这些只是核心事件的外显表现，真正稀缺的是：\n实盘权 数据权限 策略归因 项目所有权 一次能证明自己的机会 你如果不争取，这些机会都很难随机轮到你。\n“抢”也不是要去算计别人，而是当机会出现时，你要敢于说：\n这个我来做。\n这就是普通研究员能拿到的 Alpha。\n三、脏活累活才是好活 现在各家中小私募的实习和应届招聘宣传话术，都不断在向外资和头部私募看齐，说我们这没有 Dirty work，这甚至这都成了研究员入行时候，判断一个岗位要不要去的重要标准。\n我有时候真的很摸不到头脑，外资和头部私募百千号人，数据、开发、部署、交易、策略岗位分工细致，所以他们招 QR 确实可以说没有 Dirty work，因为这些早就被分出去了，这很合理。\n但是，其他私募是怎么做到没有脏活的呢？如果没有这些，大家靠什么去产出呢？靠那些高屋建瓴的论文复现和新潮模型吗？\n很多量化研究员会抱怨：“我做的事情很杂，很苦，很脏，没有价值。”\n但是不是实际上恰恰相反：\n脏活累活，才是普通研究员的 Alpha 来源呢？\n因为脏活累活：\n别人做不深 别人看不上 别人做不了 但这些东西在真实交易和让你理解市场与行业，可能是非常重要的。\n就像是：\n高频数据能不能洗明白 风控逻辑到底为什么这样设计 异常监控和实盘执行怎么做最好 这些完全是策略能不能赚钱的基石，你把这些做透了，你的职业壁垒没准比在任何中小私募做一些 fancy 模型都要高。\n四、超额都在农村 量化世界里：\n城市＝热门大票、沪深300\n农村＝中小票、冷门资产、长尾机会\n城市里的价格非常有效，你难以靠聪明获得便宜。\n但“农村”反而：\n噪声多、竞争少 错误定价更多 机器比散户强 系统优势发挥得更好 量化在“农村”更能降维打击。\n那一套逻辑平移下来，在量化私募里有没有早期的“农村”呢？\n普通研究员最初在“农村赛道”，是不是也能形成降维打击。\n长期看，农村的冷门 Alpha，恰恰是普通研究员的成长跳板，而且那还几乎没有竞业。\n这才是普通研究员真正能建立“不可替代性”的地方。\n五、普通人的 Alpha，是一种路径，而不是一种天赋 天才的 Alpha 在天上，普通人的 Alpha 在地下：\n在真实问题里 在脏活累活里 在冷门方向里 在执行力和细节里 在你愿不愿意把一件小事情做到极致里 你不是天才没关系，你没有完美开局也没关系。\n你手上的牌不是决定你能走多远。\n而是你怎么打？才决定你能不能赢。\n熬，积累底层能力；\n碰，遇见信息密度更高的人；\n蹭，让自己进入资源信息流动的地方；\n抢，争取能证明自己的机会；\n用脏活累活，积累底层壁垒；\n找农村市场，实现职场前期超额收益。\n这可能是我见到的普通量化研究员，职业前期最现实和可执行的 Alpha 路径。说到最后，顶尖公司永远存在，只要你不断积累结果，有独特竞争力，顶尖公司的大门随时向你敞开。\n这些是我目前的一些小思考，供大家参考，之后有新的想法我随时更新。\n",
+  "wordCount" : "2953",
+  "inLanguage": "zh-cn",
+  "image": "https://donggao111.github.io/images/papermod-cover.png","datePublished": "2025-12-01T00:00:00Z",
+  "dateModified": "2025-12-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dong Gao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98%E5%A6%82%E4%BD%95%E5%9C%A8%E7%83%82%E7%89%8C%E5%B1%80%E9%97%AF%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84-alpha/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dong Gao",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://donggao111.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://donggao111.github.io/" accesskey="h" title="Dong Gao (Alt + H)">Dong Gao</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://donggao111.github.io/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/essays" title="Essays">
+                    <span>Essays</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/events" title="Events">
+                    <span>Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/hiring" title="Hiring">
+                    <span>Hiring</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://donggao111.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://donggao111.github.io/essays/">Essays</a></div>
+    <h1 class="post-title entry-hint-parent">
+      熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha
+    </h1>
+    <div class="post-meta"><span title='2025-12-01 00:00:00 +0000 UTC'>December 1, 2025</span>&nbsp;·&nbsp;Dong Gao
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%80%e8%81%8c%e4%b8%9a%e9%80%89%e6%8b%a9%e6%99%ae%e9%80%9a%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%81%9a%e7%8e%b0%e5%ae%9e%e6%9c%80%e4%bc%98%e8%a7%a3" aria-label="一、职业选择：普通研究员如何做“现实最优解”">一、职业选择：普通研究员如何做“现实最优解”</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%e6%89%8d%e6%98%af%e7%8e%b0%e5%ae%9e%e4%b8%96%e7%95%8c%e7%9a%84-alpha-%e7%94%9f%e6%88%90%e6%a8%a1%e5%9e%8b" aria-label="二、“熬碰蹭抢”才是现实世界的 Alpha 生成模型">二、“熬碰蹭抢”才是现实世界的 Alpha 生成模型</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e8%84%8f%e6%b4%bb%e7%b4%af%e6%b4%bb%e6%89%8d%e6%98%af%e5%a5%bd%e6%b4%bb" aria-label="三、脏活累活才是好活">三、脏活累活才是好活</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e8%b6%85%e9%a2%9d%e9%83%bd%e5%9c%a8%e5%86%9c%e6%9d%91" aria-label="四、超额都在农村">四、超额都在农村</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e6%99%ae%e9%80%9a%e4%ba%ba%e7%9a%84-alpha%e6%98%af%e4%b8%80%e7%a7%8d%e8%b7%af%e5%be%84%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%80%e7%a7%8d%e5%a4%a9%e8%b5%8b" aria-label="五、普通人的 Alpha，是一种路径，而不是一种天赋">五、普通人的 Alpha，是一种路径，而不是一种天赋</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><strong>—— 写给不是天选之子、没有超强背景、没有完美开局，却依然想变强的你</strong></p>
+<p>量化行业永远在讲天才：</p>
+<p>奥赛金牌、藤校博士、HRT/Jane Street/Jump、百万年薪开局……</p>
+<p>但真实世界里，99.9% 的量化研究员都不是这种背景。</p>
+<p>大家的起点往往是：</p>
+<ul>
+<li>二三梯队私募</li>
+<li>脏数据、烂系统</li>
+<li>项目方向混乱、资源不足</li>
+<li>有时甚至半研究半运维</li>
+</ul>
+<p>如果你不是天才，那你的路该怎么走？怎么在不完美的环境里找到能让你赢的路径？</p>
+<p>今天我想试着分享一些我的观察，讲讲我对量化研究员职业发展的三个小思考：</p>
+<p>1）普通研究员如何做“现实最优解”？</p>
+<p>2）“熬碰蹭抢”：普通人的 Alpha 从哪里来？</p>
+<p>3）为什么“脏活累活、农村市场”反而更能成为你的护城河？</p>
+<hr>
+<h3 id="一职业选择普通研究员如何做现实最优解">一、职业选择：普通研究员如何做“现实最优解”<a hidden class="anchor" aria-hidden="true" href="#一职业选择普通研究员如何做现实最优解">#</a></h3>
+<p>很多研究员喜欢问：“我是不是一定要去头部公司才算成功？”</p>
+<p>这也是我之前一直在思考的问题，我现在得出的结论是：</p>
+<p>头部平台本身不一定更适合普通研究员，适合你的，往往是那个能让你“成长速度最快”的位置。</p>
+<p>因为不同阶段，研究员需要的东西不一样：</p>
+<p><strong>1）刚入行：需要“让你明白你在干什么”的地方</strong></p>
+<p>这个阶段最容易出现两个极端：</p>
+<p>自信心爆棚：觉得自己随时能进头部、做出策略、拿到 PnL。</p>
+<p>信心不足：觉得自己啥也不行，身边人都比自己强，就自己纯菜鸡。</p>
+<p>但现实往往介于两者之间。</p>
+<p>我觉得入行第一年，最重要的不是证明“你是不是天才”。</p>
+<p>而是：</p>
+<ul>
+<li>你有没有持续在做事情</li>
+<li>你有没有真正理解自己在做什么</li>
+<li>你的代码是否越来越干净工整</li>
+<li>你是否开始有自己的判断和审美</li>
+</ul>
+<p>我见过很多第一年就想跳头部的同学，但我总觉得其实他们更需要的是：</p>
+<p>一个可靠的 mentor、一个真实能接触实盘的环境、一个可以犯错但能修正的空间。</p>
+<p>第一年不是“做出成绩”，而是“形成，成长速度”。</p>
+<p><strong>2）职业中期：需要“能产生真正成果”的地方</strong></p>
+<p>这个阶段研究员的分化是最大的，很多 Quant 在这个阶段开始真正成型。</p>
+<p>但也有人陷入一种危险状态：做了一些东西，但没有“真正能够证明自己的成果”。</p>
+<p>这个阶段我分析有几个常见的问题：</p>
+<ul>
+<li>技术不错，但没有体系：写代码可以，但策略碎片化。</li>
+<li>做过项目，但无法解释项目：重复别人的框架，但没有自己的理解。</li>
+<li>可以复现，但缺乏创新性：在“不断过拟合”，不是解决“真实问题”。</li>
+</ul>
+<p>我觉得这时候关键不是跳槽、不是涨薪，而是能不能找一个地方，让你：</p>
+<ul>
+<li>把一个方向打穿打透</li>
+<li>形成一套自己的工作方法</li>
+<li>对一个项目从头到尾负责</li>
+</ul>
+<p>如果没有做到这些，单纯的跳槽薪资上浮30%，我觉得并不是最优解，因为这不会让你本质变更强，但却会让你越来越浮躁和焦虑。</p>
+<p><strong>3）对顶尖公司的理解：这不是“好地方”，而是“需要准备好才能去的地方”</strong></p>
+<p>因为越是头部：审核越严格、失败成本越高、专业分工越细、压力越大、容错率越低、资源和权限分配也越谨慎。</p>
+<p>它不是“成长的地方”，它是“成熟的人去贡献价值，然后变现的地方”。</p>
+<p>职业路径最终不是看你进哪家公司，而是你能不能在某个地方积累出属于自己的“不可替代性”。</p>
+<p>我觉得普通研究员的职业选择逻辑： 不能只盯着“最光鲜的地方”，而是选择 “能让你产生复利的位置”。</p>
+<hr>
+<h3 id="二熬碰蹭抢才是现实世界的-alpha-生成模型">二、“熬碰蹭抢”才是现实世界的 Alpha 生成模型<a hidden class="anchor" aria-hidden="true" href="#二熬碰蹭抢才是现实世界的-alpha-生成模型">#</a></h3>
+<p>天才靠天赋跑赢，普通人要靠策略跑赢。“熬碰蹭抢”不是功利取巧，它是一个真实可执行的职业算法。</p>
+<p><strong>1）熬：你能不能在一个方向上形成复利</strong></p>
+<p>咱熬的不是熬时间，而是：</p>
+<ul>
+<li>你的判断能力能不能复利？</li>
+<li>你的经验和知识库能不能复利？</li>
+<li>你的策略直觉能不能复利？</li>
+</ul>
+<p>很多人看着很努力，但其实每天在做的都是完全不可复用的事：</p>
+<p>改需求、跑流程、救火……仔细想想，三年下来其实什么都没留下。</p>
+<p>熬的关键不是坚持，而是积累沉淀，把经验转变为个人资产。</p>
+<p><strong>2）碰：你要主动走到“信息密度更高的人”附近</strong></p>
+<p>量化行业里差距最大的差距，我觉得不是竞赛经历、学历背景、全职起点，而是：你有没有在正确的人身边学过东西？</p>
+<p>和行业里真正做策略的大佬接触十分钟，可能胜过你读十篇论文和做一堆回测。</p>
+<p>你遇见谁，和谁一起合作，这会改变你未来的轨迹。</p>
+<p>所以没事碰一碰，这不是赌运气，而是你让自己尽可能出现“在正确的投研场景里”。</p>
+<p><strong>3）蹭：进入圈子之前，你不可能拥有圈子</strong></p>
+<p>蹭，是一种很奇特的策略，它确实只专属一些特定的E人。这种职业策略可以让自己出现在机会和信息流动的地方。</p>
+<ul>
+<li>技术和 Quant 群</li>
+<li>行业 coffee chat</li>
+<li>量化研究员聚会</li>
+<li>小范围内部讨论</li>
+</ul>
+<p>你不在这些地方，就拿不到这么多元的信息，信息越多，你可以用来综合判断产出职场 alpha 的稳定性就越高。</p>
+<p>之前听过一句话，普通人的进阶路径，从来不是天才的复制，而是：“站在哪个圈子，就看到哪个世界”。</p>
+<p><strong>4）抢：资源稀缺，不争取就是放弃</strong></p>
+<p>量化里最稀缺的东西是什么？</p>
+<p>不是工资，不是名头，这些只是核心事件的外显表现，真正稀缺的是：</p>
+<ul>
+<li>实盘权</li>
+<li>数据权限</li>
+<li>策略归因</li>
+<li>项目所有权</li>
+<li>一次能证明自己的机会</li>
+</ul>
+<p>你如果不争取，这些机会都很难随机轮到你。</p>
+<p>“抢”也不是要去算计别人，而是当机会出现时，你要敢于说：</p>
+<p>这个我来做。</p>
+<p>这就是普通研究员能拿到的 Alpha。</p>
+<hr>
+<h3 id="三脏活累活才是好活">三、脏活累活才是好活<a hidden class="anchor" aria-hidden="true" href="#三脏活累活才是好活">#</a></h3>
+<p>现在各家中小私募的实习和应届招聘宣传话术，都不断在向外资和头部私募看齐，说我们这没有 Dirty work，这甚至这都成了研究员入行时候，判断一个岗位要不要去的重要标准。</p>
+<p>我有时候真的很摸不到头脑，外资和头部私募百千号人，数据、开发、部署、交易、策略岗位分工细致，所以他们招 QR 确实可以说没有 Dirty work，因为这些早就被分出去了，这很合理。</p>
+<p>但是，其他私募是怎么做到没有脏活的呢？如果没有这些，大家靠什么去产出呢？靠那些高屋建瓴的论文复现和新潮模型吗？</p>
+<p>很多量化研究员会抱怨：“我做的事情很杂，很苦，很脏，没有价值。”</p>
+<p>但是不是实际上恰恰相反：</p>
+<p><strong>脏活累活，才是普通研究员的 Alpha 来源呢？</strong></p>
+<p>因为脏活累活：</p>
+<ul>
+<li>别人做不深</li>
+<li>别人看不上</li>
+<li>别人做不了</li>
+</ul>
+<p>但这些东西在真实交易和让你理解市场与行业，可能是非常重要的。</p>
+<p>就像是：</p>
+<ul>
+<li>高频数据能不能洗明白</li>
+<li>风控逻辑到底为什么这样设计</li>
+<li>异常监控和实盘执行怎么做最好</li>
+</ul>
+<p>这些完全是策略能不能赚钱的基石，你把这些做透了，你的职业壁垒没准比在任何中小私募做一些 fancy 模型都要高。</p>
+<hr>
+<h3 id="四超额都在农村">四、超额都在农村<a hidden class="anchor" aria-hidden="true" href="#四超额都在农村">#</a></h3>
+<p>量化世界里：</p>
+<p>城市＝热门大票、沪深300</p>
+<p>农村＝中小票、冷门资产、长尾机会</p>
+<p>城市里的价格非常有效，你难以靠聪明获得便宜。</p>
+<p>但“农村”反而：</p>
+<ul>
+<li>噪声多、竞争少</li>
+<li>错误定价更多</li>
+<li>机器比散户强</li>
+<li>系统优势发挥得更好</li>
+</ul>
+<p>量化在“农村”更能降维打击。</p>
+<p>那一套逻辑平移下来，在量化私募里有没有早期的“农村”呢？</p>
+<p><strong>普通研究员最初在“农村赛道”，是不是也能形成降维打击。</strong></p>
+<p>长期看，农村的冷门 Alpha，恰恰是普通研究员的成长跳板，而且那还几乎没有竞业。</p>
+<p>这才是普通研究员真正能建立“不可替代性”的地方。</p>
+<hr>
+<h3 id="五普通人的-alpha是一种路径而不是一种天赋">五、普通人的 Alpha，是一种路径，而不是一种天赋<a hidden class="anchor" aria-hidden="true" href="#五普通人的-alpha是一种路径而不是一种天赋">#</a></h3>
+<p>天才的 Alpha 在天上，普通人的 Alpha 在地下：</p>
+<ul>
+<li>在真实问题里</li>
+<li>在脏活累活里</li>
+<li>在冷门方向里</li>
+<li>在执行力和细节里</li>
+<li>在你愿不愿意把一件小事情做到极致里</li>
+</ul>
+<p>你不是天才没关系，你没有完美开局也没关系。</p>
+<p>你手上的牌不是决定你能走多远。</p>
+<p>而是你怎么打？才决定你能不能赢。</p>
+<ul>
+<li>
+<p>熬，积累底层能力；</p>
+</li>
+<li>
+<p>碰，遇见信息密度更高的人；</p>
+</li>
+<li>
+<p>蹭，让自己进入资源信息流动的地方；</p>
+</li>
+<li>
+<p>抢，争取能证明自己的机会；</p>
+</li>
+</ul>
+<p>用脏活累活，积累底层壁垒；</p>
+<p>找农村市场，实现职场前期超额收益。</p>
+<p>这可能是我见到的普通量化研究员，职业前期最现实和可执行的 Alpha 路径。说到最后，顶尖公司永远存在，只要你不断积累结果，有独特竞争力，顶尖公司的大门随时向你敞开。</p>
+<p>这些是我目前的一些小思考，供大家参考，之后有新的想法我随时更新。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on x"
+            href="https://x.com/intent/tweet/?text=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f&amp;title=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha&amp;summary=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha&amp;source=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f&title=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on whatsapp"
+            href="https://api.whatsapp.com/send?text=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha%20-%20https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on telegram"
+            href="https://telegram.me/share/url?text=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 熬碰蹭抢，量化研究员如何在烂牌局闯出自己的 Alpha on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%e7%86%ac%e7%a2%b0%e8%b9%ad%e6%8a%a2%ef%bc%8c%e9%87%8f%e5%8c%96%e7%a0%94%e7%a9%b6%e5%91%98%e5%a6%82%e4%bd%95%e5%9c%a8%e7%83%82%e7%89%8c%e5%b1%80%e9%97%af%e5%87%ba%e8%87%aa%e5%b7%b1%e7%9a%84%20Alpha&u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E9%2587%258F%25E5%258C%2596%25E7%25A0%2594%25E7%25A9%25B6%25E5%2591%2598%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E7%2583%2582%25E7%2589%258C%25E5%25B1%2580%25E9%2597%25AF%25E5%2587%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584-alpha%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/DongGaodong111/">Dong Gao</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
