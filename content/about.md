@@ -8,6 +8,8 @@ ShowToc: true
 ShowBreadCrumbs: true
 hideSummary: true
 hideMeta: true
+disableShare: true
+showSocialLinks: true
 ---
 
 I’m Dong Gao, the founder of SUPER QUANT, a specialist executive search firm focused on top-tier talent in quantitative finance.
