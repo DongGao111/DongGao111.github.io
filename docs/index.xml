@@ -65,15 +65,6 @@
       <description>作者：弗兰克·帕特诺伊</description>
     </item>
     <item>
-      <title>About</title>
-      <link>https://donggao111.github.io/about/</link>
-      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://donggao111.github.io/about/</guid>
-      <description>&lt;p&gt;I’m Dong Gao, the founder of SUPER QUANT, a specialist executive search firm focused on top-tier talent in quantitative finance.&lt;/p&gt;
-&lt;p&gt;While my work sits in recruiting, my primary interest has always been upstream of hiring itself — how alpha is actually produced, how organizations make decisions under constraints, and why certain roles become critical at specific moments.&lt;/p&gt;
-&lt;p&gt;I work closely with decision-makers at leading quant funds, typically recommending very few people, and only where I believe the fit is structurally sound over the long term.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>在量化私募里，请避开长方形的鱼</title>
       <link>https://donggao111.github.io/essays/%E5%9C%A8%E9%87%8F%E5%8C%96%E7%A7%81%E5%8B%9F%E9%87%8C%E8%AF%B7%E9%81%BF%E5%BC%80%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E9%B1%BC/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
@@ -1879,6 +1870,15 @@
 &lt;p&gt;&lt;strong&gt;地点&lt;/strong&gt;：北京市海淀区学院路国际人才创新实验室&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本次主题&lt;/strong&gt;：量化研究员职业发展图鉴&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主题背景&lt;/strong&gt;：根据中国量化白皮书数据显示，截止2022年12月末，在协会备案登记的私募证券基金管理人数为8556家，其中涉及量化策略的机构共计2293家，量化私募中100亿以上规模共计39家，50&lt;del&gt;100亿规模共计36家，20&lt;/del&gt;50亿规模共计126家，10~20亿规模共计184家。随着互联网行业热度递减，部分头部人才跻身量化行业，量化求职越来越卷，私募中的人才大战也越发激烈，找到一份称心如意的实习和全职难上加难。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://donggao111.github.io/about/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/about/</guid>
+      <description>&lt;p&gt;I’m Dong Gao, the founder of SUPER QUANT, a specialist executive search firm focused on top-tier talent in quantitative finance.&lt;/p&gt;
+&lt;p&gt;While my work sits in recruiting, my primary interest has always been upstream of hiring itself — how alpha is actually produced, how organizations make decisions under constraints, and why certain roles become critical at specific moments.&lt;/p&gt;
+&lt;p&gt;I work closely with decision-makers at leading quant funds, typically recommending very few people, and only where I believe the fit is structurally sound over the long term.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
