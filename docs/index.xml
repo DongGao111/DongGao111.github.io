@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.151.1</generator>
     <language>zh-cn</language>
     <copyright>Dong Gao</copyright>
-    <lastBuildDate>Sun, 22 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://donggao111.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install / Update PaperMod</title>
@@ -27,6 +27,13 @@
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://donggao111.github.io/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
+    </item>
+    <item>
+      <title>《基业长青》</title>
+      <link>https://donggao111.github.io/notes/%E5%9F%BA%E4%B8%9A%E9%95%BF%E9%9D%92/</link>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/notes/%E5%9F%BA%E4%B8%9A%E9%95%BF%E9%9D%92/</guid>
+      <description>作者：吉姆·柯林斯</description>
     </item>
     <item>
       <title>《运气的诱饵》</title>
