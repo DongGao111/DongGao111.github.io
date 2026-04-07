@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>要数月亮，不数星星：我的量化猎头方法论 | Dong Gao</title>
+<meta name="keywords" content="">
+<meta name="description" content="做量化猎头久了，我慢慢有一个体会：
+有些问题，其实不是方法问题，而是你在看什么的问题。
+很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。">
+<meta name="author" content="Dong Gao">
+<link rel="canonical" href="https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.df70daba43f25cbb69f1a196c5403358c411f9f14cf09e52c9c494e190fb0e83.css" integrity="sha256-33DaukPyXLtp8aGWxUAzWMQR&#43;fFM8J5SycSU4ZD7DoM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://donggao111.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://donggao111.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://donggao111.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://donggao111.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://donggao111.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="要数月亮，不数星星：我的量化猎头方法论" />
+<meta property="og:description" content="做量化猎头久了，我慢慢有一个体会：
+有些问题，其实不是方法问题，而是你在看什么的问题。
+很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/" />
+<meta property="og:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta property="article:section" content="essays" />
+<meta property="article:published_time" content="2026-04-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-04-07T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://donggao111.github.io/images/papermod-cover.png" />
+<meta name="twitter:title" content="要数月亮，不数星星：我的量化猎头方法论"/>
+<meta name="twitter:description" content="做量化猎头久了，我慢慢有一个体会：
+有些问题，其实不是方法问题，而是你在看什么的问题。
+很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Essays",
+      "item": "https://donggao111.github.io/essays/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "要数月亮，不数星星：我的量化猎头方法论",
+      "item": "https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "要数月亮，不数星星：我的量化猎头方法论",
+  "name": "要数月亮，不数星星：我的量化猎头方法论",
+  "description": "做量化猎头久了，我慢慢有一个体会：\n有些问题，其实不是方法问题，而是你在看什么的问题。\n很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "做量化猎头久了，我慢慢有一个体会：\n有些问题，其实不是方法问题，而是你在看什么的问题。\n很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。\n一、要数月亮，不数星星 “要数月亮，不数星星。”\n我不断体会之后，现在觉得这句话在人才寻访里，其实可以说得更直白一点：\n不要试图在一堆平庸的人里，找到卓越。\n什么是星星？\n是人选：\n履历不错 项目不少 聊起来也觉得还行 是公司：\n决策标准不稳定 看起来在招人，但需求始终不清晰，什么人都看 除了口头的饼以外，其他一问全都含糊 但无论是人，还是公司，聊下来心里隐约都会有一个判断：\n这些的共同点，本质上都是在相似画像和不断的内卷中反复挣扎。\n很多人和公司会在这里花大量时间，试图“挖掘潜力”。\n但我现在觉得，这个行为，本身就有问题。\n有一次我看马未都的访谈节目，他说一句话，我觉得非常深刻：\n“你去地摊捡漏，大概率是被骗。\n你去佳士得拍卖行，最差也就是买贵。”\n月亮，不是你挖出来的，是市场已经反复验证过的。\n什么是月亮？\n不是“那个看起来有多么标新立异，以小博大的”，而是：\n在多个顶尖环境里被证明过 在不同市场结构下依然成立 有稳定方法论，而不是单点结果 你和这种人交流，会有一种很强的确定感：\n他知道自己在做什么 也知道自己不该做什么 我觉得这里面最核心的就是，甚至你都不需要很专业，\n就能判断：这个人是对的。\n也包括一类公司：\n有稳定的判断体系，知道什么是好人选 尊重市场定价和游戏规则，给最好的人选最满意的pay 公司现金流的充沛程度不随单段行情而剧烈变化 这些聊下来，也会有一种很明显的感受：\n沟通成本很低 决策很快 很少反复 如果一座山像珠穆朗玛峰一样立在那里，你不需要是专家和天才，也知道它很高。\n顶级人才和好公司的出现，就是这种感觉。\n不是你分析出来的，而是你\n“一眼看见”的。\n所以这件事的关键，不是“识别能力”，而是：\n你把时间放在哪个分布里？\n是在一堆星星里反复筛选，还是直接去“已经是月亮的地方”，\n做更好的定价。\n二、人才分层：顶天与立地 我之前看过一篇文章，对我后来做人才寻访启发很大，大意是：\n做研究，要么顶天，要么立地。\n顶天：挖坑的人\n做的东西有新意 这个方向里的人，大概听说过（比如oral、best paper这种级别） 你讲出来，别人会觉得“有意思” 这种人不一定有很多产出。\n有的人可能一辈子也就一两篇，但已经够了。\n立地：填坑的人\n不做边际的小修小补 做的是学术和工业界都关心的问题 真正处理的是“关键那一段” 这种人你跟他聊，会有一种很直接的感觉。\n事情交给他，是能做成的。\n大多数人，其实在中间。\n做了不少项目 paper也有 看起来也都对 但有一个很微妙的信号：\n“他没有一件自己愿意反复提的工作”，硬要讲的话，他会有点犹豫。\n所以我现在的判断其实很简单：\n有没有一件事，是你自己愿意反复讲的 或者，有没有一件事，是别人会提到你的 如果这两个都没有，那大概率还在中间层\n真正的“月亮型”人才，往往至少占一边：\n要么你知道他做过什么 要么你知道他能解决什么 而且更重要的是： 这些能力，几乎不依赖具体环境。\n三、筛选机制：主动定时清理 我最开始也觉得，猎头的核心是“撮合”。\n但做久了我才想明白：\n这更像一个筛选系统，而不是匹配系统。\n如果说的更直接一点：\n做不好，往往不是因为没找到好人，而是没有把不对的人删掉。\n刚开始做猎头，有一种很常见的错觉：\n“这个单子再跟一跟，也许就成了。”\n但现实往往是：\nHR沟通含糊 量化团队JD反复改 面试标准不一致 今天觉得好，明天又觉得不行，后天还要再想想 这种情况，通常不是信息问题，\n而是：\n你推的人不行，\n对方也没有稳定的判断体系。\n我后来总结，这类合作方有一个共同特点：\n“一开始很容易推进，\n但越往后，合作成本越高。”\n所以我给自己定了一个很简单的规则：\n不要和会持续制造不确定性的人合作。\n咱这工作，不是在找“可能赚钱的机会”，\n而是在避开：\n确定会消耗你的人和事。\n芒格讲过一句话，我一直记着：\n先想清楚你会怎么失败，然后避免它。\n放在我这里，就是：\n哪些公司，一定会反复横跳 哪些人，一定会在关键时刻出问题 这些东西，其实很早就能看出来。\n但大多数人不会停。\n因为舍不得。\n所以筛选这件事，本质不是能力问题，而是：\n你有没有勇气，把明显不对的东西停掉。\n段永平讲“Stop doing list”，我觉得说的就是这个意思。\n不是你要多做多少事，\n而是你能不能：\n不做那些已经证明不对的事。\n四、理想与现实：两条腿走路 前面这些话，说起来都很对，也都很轻松。\n但有一个现实问题：\n在前期，你不可能只做月亮。\n如果你只做那些：\n已经被验证过的顶级人选 判断非常确定的机会 大概率会遇到一个问题：\n你很难活下来。\n所以这件事，本质上不是对错问题，而是：\n结构问题。\n我后来给自己的划分很简单：\n一部分时间，留给月亮 一部分时间，用来处理星星 关键不在于你有没有做“星星”，\n而在于：它在你世界里的占比。\n有的人，一直在做星星，只是偶尔幻想月亮；\n有的人，已经在做月亮，只是暂时还需要星星。\n这两种状态，看起来差不多，\n但长期结果完全不一样。\n马云的一句话，我觉得很实在：\n“忽略现实走不远，没有理想做不大。”\n可以暂时接一些“不那么理想”的单子，\n但你更要关心的是：\n这些单子，会不会在逐渐减少？\n如果不会减少，那是路径问题；\n如果在减少，那只是过程问题。\n这两件事，当下没区别，时间拉长，差别很大。\n五、回到最后 如果把这些都收回来，其实就一句话：\n不要试图在低确定性的地方，寻找高回报。\n数星星，很容易，也很热闹；\n数月亮，很慢，但很孤独。\n很多人觉得，自己的问题是不够努力。\n但更常见的情况是：\n把时间花在了可替代性最高的地方。\n我总是觉得，真正拉开差距的，不是能力，而是选择：\n你把时间，放在什么样的分布里。\n月亮，一开始就在那里。\n问题从来不是你能不能找到它，\n而是：\n你有没有绕开那些注定是星星的地方。\n",
+  "wordCount" : "2321",
+  "inLanguage": "zh-cn",
+  "image": "https://donggao111.github.io/images/papermod-cover.png","datePublished": "2026-04-07T00:00:00Z",
+  "dateModified": "2026-04-07T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dong Gao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dong Gao",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://donggao111.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://donggao111.github.io/" accesskey="h" title="Dong Gao (Alt + H)">Dong Gao</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://donggao111.github.io/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/essays" title="Essays">
+                    <span>Essays</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/events" title="Events">
+                    <span>Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://donggao111.github.io/hiring" title="Hiring">
+                    <span>Hiring</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://donggao111.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://donggao111.github.io/essays/">Essays</a></div>
+    <h1 class="post-title entry-hint-parent">
+      要数月亮，不数星星：我的量化猎头方法论
+    </h1>
+    <div class="post-meta"><span title='2026-04-07 00:00:00 +0000 UTC'>April 7, 2026</span>&nbsp;·&nbsp;Dong Gao
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%80%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f" aria-label="一、要数月亮，不数星星">一、要数月亮，不数星星</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e4%ba%ba%e6%89%8d%e5%88%86%e5%b1%82%e9%a1%b6%e5%a4%a9%e4%b8%8e%e7%ab%8b%e5%9c%b0" aria-label="二、人才分层：顶天与立地">二、人才分层：顶天与立地</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e7%ad%9b%e9%80%89%e6%9c%ba%e5%88%b6%e4%b8%bb%e5%8a%a8%e5%ae%9a%e6%97%b6%e6%b8%85%e7%90%86" aria-label="三、筛选机制：主动定时清理">三、筛选机制：主动定时清理</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e7%90%86%e6%83%b3%e4%b8%8e%e7%8e%b0%e5%ae%9e%e4%b8%a4%e6%9d%a1%e8%85%bf%e8%b5%b0%e8%b7%af" aria-label="四、理想与现实：两条腿走路">四、理想与现实：两条腿走路</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e5%9b%9e%e5%88%b0%e6%9c%80%e5%90%8e" aria-label="五、回到最后">五、回到最后</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>做量化猎头久了，我慢慢有一个体会：</p>
+<p>有些问题，其实不是方法问题，而是你在看什么的问题。</p>
+<p><strong>很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。</strong></p>
+<hr>
+<h3 id="一要数月亮不数星星">一、要数月亮，不数星星<a hidden class="anchor" aria-hidden="true" href="#一要数月亮不数星星">#</a></h3>
+<p>“要数月亮，不数星星。”</p>
+<p>我不断体会之后，现在觉得这句话在人才寻访里，其实可以说得更直白一点：</p>
+<p><strong>不要试图在一堆平庸的人里，找到卓越。</strong></p>
+<p>什么是星星？</p>
+<p>是人选：</p>
+<ul>
+<li>履历不错</li>
+<li>项目不少</li>
+<li>聊起来也觉得还行</li>
+</ul>
+<p>是公司：</p>
+<ul>
+<li>决策标准不稳定</li>
+<li>看起来在招人，但需求始终不清晰，什么人都看</li>
+<li>除了口头的饼以外，其他一问全都含糊</li>
+</ul>
+<p>但无论是人，还是公司，聊下来心里隐约都会有一个判断：</p>
+<p><strong>这些的共同点，本质上都是在相似画像和不断的内卷中反复挣扎。</strong></p>
+<hr>
+<p>很多人和公司会在这里花大量时间，试图“挖掘潜力”。</p>
+<p>但我现在觉得，这个行为，本身就有问题。</p>
+<p>有一次我看马未都的访谈节目，他说一句话，我觉得非常深刻：</p>
+<p><strong>“你去地摊捡漏，大概率是被骗。</strong></p>
+<p><strong>你去佳士得拍卖行，最差也就是买贵。”</strong></p>
+<hr>
+<p><strong>月亮，不是你挖出来的，是市场已经反复验证过的。</strong></p>
+<p>什么是月亮？</p>
+<p>不是“那个看起来有多么标新立异，以小博大的”，而是：</p>
+<ul>
+<li>在多个顶尖环境里被证明过</li>
+<li>在不同市场结构下依然成立</li>
+<li>有稳定方法论，而不是单点结果</li>
+</ul>
+<p>你和这种人交流，会有一种很强的确定感：</p>
+<ul>
+<li>他知道自己在做什么</li>
+<li>也知道自己不该做什么</li>
+</ul>
+<p>我觉得这里面最核心的就是，甚至你都不需要很专业，</p>
+<p>就能判断：这个人是对的。</p>
+<p>也包括一类公司：</p>
+<ul>
+<li>有稳定的判断体系，知道什么是好人选</li>
+<li>尊重市场定价和游戏规则，给最好的人选最满意的pay</li>
+<li>公司现金流的充沛程度不随单段行情而剧烈变化</li>
+</ul>
+<p>这些聊下来，也会有一种很明显的感受：</p>
+<ul>
+<li>沟通成本很低</li>
+<li>决策很快</li>
+<li>很少反复</li>
+</ul>
+<p><strong>如果一座山像珠穆朗玛峰一样立在那里，你不需要是专家和天才，也知道它很高。</strong></p>
+<hr>
+<p>顶级人才和好公司的出现，就是这种感觉。</p>
+<p>不是你分析出来的，而是你</p>
+<p><strong>“一眼看见”的。</strong></p>
+<p>所以这件事的关键，不是“识别能力”，而是：</p>
+<p>你把时间放在哪个分布里？</p>
+<p>是在一堆星星里反复筛选，还是直接去“已经是月亮的地方”，</p>
+<p>做更好的定价。</p>
+<hr>
+<h3 id="二人才分层顶天与立地">二、人才分层：顶天与立地<a hidden class="anchor" aria-hidden="true" href="#二人才分层顶天与立地">#</a></h3>
+<p>我之前看过一篇文章，对我后来做人才寻访启发很大，大意是：</p>
+<p>做研究，要么顶天，要么立地。</p>
+<p><strong>顶天：挖坑的人</strong></p>
+<ul>
+<li>做的东西有新意</li>
+<li>这个方向里的人，大概听说过（比如oral、best paper这种级别）</li>
+<li>你讲出来，别人会觉得“有意思”</li>
+</ul>
+<p>这种人不一定有很多产出。</p>
+<p>有的人可能一辈子也就一两篇，但已经够了。</p>
+<p><strong>立地：填坑的人</strong></p>
+<ul>
+<li>不做边际的小修小补</li>
+<li>做的是学术和工业界都关心的问题</li>
+<li>真正处理的是“关键那一段”</li>
+</ul>
+<p>这种人你跟他聊，会有一种很直接的感觉。</p>
+<p>事情交给他，是能做成的。</p>
+<hr>
+<p>大多数人，其实在中间。</p>
+<ul>
+<li>做了不少项目</li>
+<li>paper也有</li>
+<li>看起来也都对</li>
+</ul>
+<p>但有一个很微妙的信号：</p>
+<p>“他没有一件自己愿意反复提的工作”，硬要讲的话，他会有点犹豫。</p>
+<p>所以我现在的判断其实很简单：</p>
+<ul>
+<li>有没有一件事，是你自己愿意反复讲的</li>
+<li>或者，有没有一件事，是别人会提到你的</li>
+</ul>
+<p>如果这两个都没有，那大概率还在中间层</p>
+<p><strong>真正的“月亮型”人才，往往至少占一边：</strong></p>
+<ul>
+<li>要么你知道他做过什么</li>
+<li>要么你知道他能解决什么</li>
+</ul>
+<p>而且更重要的是：
+这些能力，几乎不依赖具体环境。</p>
+<hr>
+<h3 id="三筛选机制主动定时清理">三、筛选机制：主动定时清理<a hidden class="anchor" aria-hidden="true" href="#三筛选机制主动定时清理">#</a></h3>
+<p>我最开始也觉得，猎头的核心是“撮合”。</p>
+<p>但做久了我才想明白：</p>
+<p>这更像一个筛选系统，而不是匹配系统。</p>
+<p>如果说的更直接一点：</p>
+<p><strong>做不好，往往不是因为没找到好人，而是没有把不对的人删掉。</strong></p>
+<hr>
+<p>刚开始做猎头，有一种很常见的错觉：</p>
+<p>“这个单子再跟一跟，也许就成了。”</p>
+<p>但现实往往是：</p>
+<ul>
+<li>HR沟通含糊</li>
+<li>量化团队JD反复改</li>
+<li>面试标准不一致</li>
+<li>今天觉得好，明天又觉得不行，后天还要再想想</li>
+</ul>
+<p>这种情况，通常不是信息问题，</p>
+<p>而是：</p>
+<p><strong>你推的人不行，</strong></p>
+<p><strong>对方也没有稳定的判断体系。</strong></p>
+<p>我后来总结，这类合作方有一个共同特点：</p>
+<p>“一开始很容易推进，</p>
+<p>但越往后，合作成本越高。”</p>
+<p>所以我给自己定了一个很简单的规则：</p>
+<p><strong>不要和会持续制造不确定性的人合作。</strong></p>
+<hr>
+<p>咱这工作，不是在找“可能赚钱的机会”，</p>
+<p>而是在避开：</p>
+<p><strong>确定会消耗你的人和事。</strong></p>
+<p>芒格讲过一句话，我一直记着：</p>
+<p>先想清楚你会怎么失败，然后避免它。</p>
+<p>放在我这里，就是：</p>
+<ul>
+<li>哪些公司，一定会反复横跳</li>
+<li>哪些人，一定会在关键时刻出问题</li>
+</ul>
+<p>这些东西，其实很早就能看出来。</p>
+<p>但大多数人不会停。</p>
+<p><strong>因为舍不得。</strong></p>
+<hr>
+<p>所以筛选这件事，本质不是能力问题，而是：</p>
+<p>你有没有勇气，把明显不对的东西停掉。</p>
+<p>段永平讲“Stop doing list”，我觉得说的就是这个意思。</p>
+<p>不是你要多做多少事，</p>
+<p>而是你能不能：</p>
+<p><strong>不做那些已经证明不对的事。</strong></p>
+<hr>
+<h3 id="四理想与现实两条腿走路">四、理想与现实：两条腿走路<a hidden class="anchor" aria-hidden="true" href="#四理想与现实两条腿走路">#</a></h3>
+<p>前面这些话，说起来都很对，也都很轻松。</p>
+<p>但有一个现实问题：</p>
+<p>在前期，你不可能只做月亮。</p>
+<p>如果你只做那些：</p>
+<ul>
+<li>已经被验证过的顶级人选</li>
+<li>判断非常确定的机会</li>
+</ul>
+<p>大概率会遇到一个问题：</p>
+<p><strong>你很难活下来。</strong></p>
+<p>所以这件事，本质上不是对错问题，而是：</p>
+<p>结构问题。</p>
+<hr>
+<p>我后来给自己的划分很简单：</p>
+<ul>
+<li>一部分时间，留给月亮</li>
+<li>一部分时间，用来处理星星</li>
+</ul>
+<p>关键不在于你有没有做“星星”，</p>
+<p>而在于：它在你世界里的占比。</p>
+<p>有的人，一直在做星星，只是偶尔幻想月亮；</p>
+<p>有的人，已经在做月亮，只是暂时还需要星星。</p>
+<p>这两种状态，看起来差不多，</p>
+<p>但长期结果完全不一样。</p>
+<p>马云的一句话，我觉得很实在：</p>
+<p><strong>“忽略现实走不远，没有理想做不大。”</strong></p>
+<hr>
+<p>可以暂时接一些“不那么理想”的单子，</p>
+<p>但你更要关心的是：</p>
+<p>这些单子，会不会在逐渐减少？</p>
+<p>如果不会减少，那是路径问题；</p>
+<p>如果在减少，那只是过程问题。</p>
+<p>这两件事，当下没区别，时间拉长，差别很大。</p>
+<hr>
+<h3 id="五回到最后">五、回到最后<a hidden class="anchor" aria-hidden="true" href="#五回到最后">#</a></h3>
+<p>如果把这些都收回来，其实就一句话：</p>
+<p><strong>不要试图在低确定性的地方，寻找高回报。</strong></p>
+<p>数星星，很容易，也很热闹；</p>
+<p>数月亮，很慢，但很孤独。</p>
+<p>很多人觉得，自己的问题是不够努力。</p>
+<p>但更常见的情况是：</p>
+<p>把时间花在了可替代性最高的地方。</p>
+<p>我总是觉得，真正拉开差距的，不是能力，而是选择：</p>
+<p><strong>你把时间，放在什么样的分布里。</strong></p>
+<hr>
+<p>月亮，一开始就在那里。</p>
+<p>问题从来不是你能不能找到它，</p>
+<p>而是：</p>
+<p><strong>你有没有绕开那些注定是星星的地方。</strong></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://donggao111.github.io/essays/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E5%91%98100%E5%80%8D%E8%96%AA%E9%85%AC%E5%B7%AE%E8%B7%9D%E7%9A%84%E5%BA%95%E5%B1%82%E6%80%9D%E8%80%83/">
+    <span class="title"> »</span>
+    <br>
+    <span>工具 × 本质理解：Quant 100倍薪酬差距的底层思考</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on x"
+            href="https://x.com/intent/tweet/?text=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f&amp;title=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba&amp;summary=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba&amp;source=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f&title=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on whatsapp"
+            href="https://api.whatsapp.com/send?text=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba%20-%20https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on telegram"
+            href="https://telegram.me/share/url?text=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba&amp;url=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 要数月亮，不数星星：我的量化猎头方法论 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%e8%a6%81%e6%95%b0%e6%9c%88%e4%ba%ae%ef%bc%8c%e4%b8%8d%e6%95%b0%e6%98%9f%e6%98%9f%ef%bc%9a%e6%88%91%e7%9a%84%e9%87%8f%e5%8c%96%e7%8c%8e%e5%a4%b4%e6%96%b9%e6%b3%95%e8%ae%ba&u=https%3a%2f%2fdonggao111.github.io%2fessays%2f%25E8%25A6%2581%25E6%2595%25B0%25E6%259C%2588%25E4%25BA%25AE%25E4%25B8%258D%25E6%2595%25B0%25E6%2598%259F%25E6%2598%259F%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/DongGaodong111/">Dong Gao</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

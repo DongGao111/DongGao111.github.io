@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.151.1</generator>
     <language>zh-cn</language>
     <copyright>Dong Gao</copyright>
-    <lastBuildDate>Fri, 27 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://donggao111.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install / Update PaperMod</title>
@@ -27,6 +27,15 @@
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://donggao111.github.io/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
+    </item>
+    <item>
+      <title>要数月亮，不数星星：我的量化猎头方法论</title>
+      <link>https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://donggao111.github.io/essays/%E8%A6%81%E6%95%B0%E6%9C%88%E4%BA%AE%E4%B8%8D%E6%95%B0%E6%98%9F%E6%98%9F/</guid>
+      <description>&lt;p&gt;做量化猎头久了，我慢慢有一个体会：&lt;/p&gt;
+&lt;p&gt;有些问题，其实不是方法问题，而是你在看什么的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;很多时候，我们并不是不努力，也不是信息不够，而是在错误的地方花了太多时间。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>工具 × 本质理解：Quant 100倍薪酬差距的底层思考</title>
