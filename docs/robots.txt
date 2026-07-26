@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://donggao111.github.io/sitemap.xml
