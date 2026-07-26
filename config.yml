@@ -123,7 +123,7 @@ outputs:
     - HTML
     - RSS
     - JSON
-    - llms
+    # - llms
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
