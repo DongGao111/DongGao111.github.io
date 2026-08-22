@@ -74,6 +74,8 @@ hideSummary: true
 
 这是两件完全不同的事情。
 
+---
+
 ### 二、会赚钱，不等于会做资管
 
 这一点以前我其实没有想得这么明白。
@@ -107,6 +109,7 @@ hideSummary: true
 
 **一个资管机构最终能够做到多大，不仅取决于它创造Alpha的能力，还取决于它创造 Have a Good Time 的能力。**
 
+---
 ### 三、什么叫 Have a Good Time？
 
 李录讲过一句我一直印象很深的话。
@@ -131,6 +134,8 @@ hideSummary: true
 这些东西加在一起，就是 Have a Good Time。
 
 **这是一种非常真实的商业能力。**
+
+---
 
 ### 四、Alpha是产品能力，Have a Good Time是商业能力
 
@@ -169,6 +174,8 @@ hideSummary: true
 **3）Alpha中，Have a Good Time也强：**
 
 这才真正有机会成为一家大资管。
+
+---
 
 ### 五、所以AUM本身其实也是一种能力的结果
 
